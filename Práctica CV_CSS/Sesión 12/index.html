@@ -12,7 +12,11 @@
 
 
 <body>
+    <body background="green">
+        
+    </body>
     <div id="Contenedor" >
+        <fieldset id="formuladrio" style="background-color: rgb(255, 255, 255);"></fieldset>
         <h2>Encuesta de Cine: Nominadas al Oscar 2021</h2>
         <form id="formulario1" name="formulario1" method="post" action="data.php"></form>
         <fieldset id="datos_personales" >
@@ -29,6 +33,78 @@
             <label for="DNI"> DNI</label>
             <input type="text" name="dni" id="dni" maxlength="9" >
             
+            
+
+            <label for="edad">Edad:</label><br>
+            <input type="text" id="edad" name="edad"><br>
+
+            <h>GENERO <br></h>
+            <input type="radio" id="masculino" name="genero" value="masculino">
+            <label for="masculino">Masculino</label><br>
+
+            <input type="radio" id="femenino" name="genero" value="femenino">
+            <label for="femenino">Femenino</label><br>
+
+            <input type="radio" id="otro" name="genero" value="otro">
+            <label for="otro">Otro</label>
+        </fieldset>
+
+    </form>
+</div>
+
+<div id="Contenedor-2">
+    <form id="Fomulario2" name="Fomulario2" method="post" action="data.php">
+        <fieldset id="Mejor-Pelicula" style="background-color: rgb(255, 255, 255);">
+            <legend>Mejor Pelicula</legend>
+            <input type="radio" id="pelicula-1" name="pelicula" value="pelicula">
+            <label for="pelicula">Pelicula 1</label><br>
+
+            <input type="radio" id="pelicula-2" name="pelicula" value="pelicula-2">
+            <label for="pelicula-2">Pelicula 2</label><br>
+
+            <input type="radio" id="pelicula-3" name="pelicula" value="pelicula-3">
+            <label for="pelicula-3">Pelicula 3</label>
+
+        </fieldset>
+    </form>
+
+</div>
+
+
+<div id="Contenedor-3">
+    <form id="Fomulario3" name="Fomulario3" method="post" action="data.php">
+        <fieldset id="Pelicula-vista" style="background-color: rgb(255, 255, 255);">
+            <legend>Selecciona la pelicula que hayas visto</legend>
+            <input type="checkbox" id="peli1" name="vehicle1" value="P01">
+            <label for="peli1">Pelicula 01</label><br>
+
+            <input type="checkbox" id="peli2" name="peli2" value="P02">
+            <label for="peli2">Pelicula 02</label><br>
+
+            <input type="checkbox" id="peli3" name="peli3" value="P03">
+            <label for="peli3">Pelicula 03</label><br>
+
+            <input type="checkbox" id="peli4" name="peli4" value="P04">
+            <label for="peli4">Pelicula 04</label><br>
+
+            <input type="checkbox" id="peli5" name="peli5" value="P05">
+            <label for="peli5">Pelicula 05</label>
+        </fieldset>
+    </form>
+</div>
+
+<div>
+    <form>
+        <fieldset id="grupo_argumento" style="background-color: rgb(255, 255, 255);"></fieldset>
+            <legend>Argumento de tu película preferida</legend>
+            <textarea name="argumento" id="argumento" cols="50" rows="14"></textarea>
+        </fieldset>
+        <br>
+        <input type="reset" value="Borrar Formulario"> <input type="submit" value="Enviar">
+    </form>
+</div>
+
+
 
 
 </body>
