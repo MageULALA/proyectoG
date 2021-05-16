@@ -14,3 +14,22 @@ body{
     margin-top: 3%;
     padding-left: 2%;
 }
+
+#tablaCV{
+    border-color: rgb(92, 223, 41);
+}
+
+
+tablacursos{
+   width: 80%;
+    
+}
+
+.botonArriba{
+    position: fixed;
+    width: 50%;
+    height: 50%;
+    bottom: -230px;
+    left: 93%;
+
+}
