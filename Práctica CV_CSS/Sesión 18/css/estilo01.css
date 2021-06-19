@@ -1,3 +1,14 @@
+#contenedor{
+width: 460px;
+height: 400px;
+margin: auto;
+margin-top: 13%;
+background-color: rgb(253, 171, 7);
+padding-left: 10px;
+font-family: calibri;
+box-shadow: yellow;
+}
+
 span{
     width: 100px;
     display: block;
