@@ -1,0 +1,196 @@
+@font-face {
+    font-family: arcade;
+    src: url(../Fuentes/8-BIT\ WONDER.TTF);
+}
+
+@font-face {
+    font-family: nimbus;
+    src: url(../Fuentes/nimbus-sans-l.regular.otf);
+}
+
+body{
+    overflow-x: hidden;
+    font-family: nimbus;
+}
+
+.arcade{
+    font-family: arcade;
+}
+
+
+.logo{
+    width: 130px;
+    height: 60px;
+    margin-bottom: 2vh;
+}
+
+
+/*Header*/
+
+header{
+    border-bottom: #0d7377 3.5px solid ;
+}
+
+.logo_header{
+    width: 155px;
+    height: 70px;
+    margin-bottom: 2vh;
+}
+
+.miniIcono{
+    width: 37px;
+    height: 37px;
+}
+
+.miniIcono2{
+    width: 37px;
+    height: 39px;
+}
+
+#login{
+    border-radius: 16px;
+}
+
+.boton_nav{
+    font-family: arcade;
+    background-color: #212121;
+    border: solid white 3px;
+    border-radius: 17px;
+    font-size: 13px;
+}
+
+.boton_nav:hover{
+    background-color: #0d7377;
+
+}
+/*Contenido*/
+
+.boton_slide{
+    border-radius: 5px;
+    
+
+}
+
+.img_boton_slide{
+    border-radius: 5px;
+}
+
+.boton_usuario{
+    border-radius: 10px;
+}
+
+.precio{
+    font-size: 45px;
+}
+
+.info_precio{
+    font-size: 30px;
+}
+
+#descripcion_producto{
+    text-align: justify;
+    font-size: 1.1rem ;
+}
+
+.barra{
+    background-color: #0d7377;
+    height: 6px;
+}
+
+.marco_perfil{
+    background-color: gray;
+    border: black solid 2px;
+    border-radius: 100%;
+    height: 2cm;
+    width: 2cm;
+}
+
+textarea{
+    resize: none;
+
+}
+
+
+.star{
+    color: rgb(194, 189, 189);
+    width: 1cm;
+}
+
+.aux:hover{
+    color: #0d7377;
+}
+
+.contenedor_comentarios{
+    overflow-y: scroll;
+    height: 10.6cm;
+}
+
+.titulo_relacionados{
+    font-size: 15px;
+}
+
+
+/*Footer*/
+.carta{
+    width: 90px;
+    height: 45px;
+    border-radius: 8px;
+    margin-bottom: 2vh;
+}
+
+.pie{
+  background-color: #212121;
+   
+}
+
+.boton_footer{
+    background-color: #0d7377;
+    border-color: rgb(79, 97, 97);
+    border-radius: 15px;
+    font-size: 14px;
+    font-family: arcade;
+    color: white;
+}
+
+
+.card-text{
+    font-size: 13px;
+}
+
+/*Usables*/
+
+.link_articulo{
+    color: black;
+    text-decoration: none;
+}
+
+.link_articulo:hover{
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+
+.negrita{
+    font-weight: bold;
+}
+
+.color_dark{
+    background-color: #212121;
+}
+
+.color_gray_light{
+    background-color: #323232;
+}
+
+.tarjeta:hover{
+    background-color: black;
+    color: white;
+}
+
+/*
+
+div{
+    border: solid black 1px;
+}
+*/

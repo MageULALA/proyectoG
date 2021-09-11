@@ -1,0 +1,27 @@
+
+body{
+    background-color: cadetblue;
+}
+
+p{
+    font-family: arial;
+    font-size: 14 px;
+}
+
+table{
+    background-color: #FFFFFF;
+}
+
+.fila1{
+    font-family: verdana;
+}
+.filadatos{
+    font-family: arial;
+    font-size: 12px;
+}
+.par{
+    background-color: #FFFFA8;
+}
+.impar{
+    background-color: #A8FFFF;
+}

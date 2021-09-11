@@ -1,0 +1,96 @@
+header {
+    background-color: rgb(160, 59, 180);
+    height: 200px;
+    color: white;
+}
+.vertical-mnu{
+    width: 100%;
+    height: 100%;
+}
+.vertical-mnu a{
+    background-color: black;
+    color: white;
+    display: block;
+    padding: 12px;
+    text-decoration: none;
+}
+.vertical-mnu a:hover{
+    background-color: white;
+}
+.vertical-mnu a.active{
+    background-color: white;
+    color:black;
+}
+#foto{
+    float: left;
+    margin: 15px;
+    padding: 15px;
+}
+#foto img{
+    height: 120px;
+    width: 120px;
+}
+h1{
+    margin: auto;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    height: auto;
+
+}
+h2{
+    margin: 30px;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 25px;
+}
+#inicio{
+    margin: 10px;
+    padding: 10px;
+    float: right;
+    height: auto;
+    width: auto;
+    background-color:rgb(160, 59, 180);
+    color: white;
+    font-family: verdana;
+    font-size: 15px;
+    border: 0px;
+}
+
+#contenido {
+    background-color: white;
+    width: 80%;
+    float: right;
+    height:800px;
+}
+aside {
+    background-color: black;
+    width: 20%;
+    float: left;
+    height:800px;
+}
+#productos{
+    width: 70%;
+    padding-left: 40px;
+    float: left;
+    padding-top: 20px;
+}
+#sidebar-productos{
+    width: 30%;
+    float: right;
+    padding-top: 20px;
+}
+
+#formulario{
+    display: block;
+    margin: 35px;
+}
+html, body{
+    height: 100%;
+}
+.modal-title, .modal-body{
+    color: black;
+    text-align: center;
+}
+
+#caja{
+    color:black;
+    text-align: center;
+}

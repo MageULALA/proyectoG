@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Veterinaria con Bootstrap</title>
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/misestilos.css">
+  <script src="https://kit.fontawesome.com/f81921d000.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+  <section id="cover">
+    <div id="cover-texto">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-12">
+            <h1 class="display-3"
+              style="text-shadow: -3px -3px 2px #000, 3px 3px 2px #000, -3px 3px 2px #000, 3px -3px 2px #000;"><strong>
+                Veterinaria Mundo Animal
+              </strong></h1>
+            <p class="lead" style="text-align: center; color: #FCDB00;font-family: impact;font-size: 30px; text-shadow: -1px -1px 1px #000, 1px 1px 1px #000, -1px 1px 1px #000, 1px -1px 1px #000;
+                        -webkit-text-fill-color: #FCDB00;-webkit-text-stroke: 2px black;">
+              Siempre al tanto y cuidado de tu mascota, un miembro de la familia.
+            </p>
+          </div>
+          <form class="row gy-2 gx-3 align-items-center d-flex justify-content-center">
+            <div class="col-auto">
+              <label class="visually-hidden" for="autoSizingInput">Nombre</label>
+              <input type="text" class="form-control" id="autoSizingInput" placeholder="Harold R.">
+            </div>
+            <div class="col-auto">
+              <label class="visually-hidden" for="autoSizingInputGroup">Usuario</label>
+              <div class="input-group">
+                <div class="input-group-text">@</div>
+                <input type="text" class="form-control" id="autoSizingInputGroup" placeholder="Nombre de Usuario">
+              </div>
+            </div>
+            <div class="col-auto">
+              <button type="submit" class="btn btn-primary">Suscribirme</button>
+            </div>
+          </form>
+  </section>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo01"
+        aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+        <a class="navbar-brand" href="">Menu</a>
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="">Inicio</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="">Nosotros</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link disabled" href="" tabindex="-1" aria-disabled="true">Servicios</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link disabled" href="" tabindex="-1" aria-disabled="true">Contactos</a>
+          </li>
+        </ul>
+        <form class="d-flex">
+          <input class="form-control me-2" type="search" placeholder="¿Qué busca?" aria-label="Search">
+          <button class="btn btn-outline-success" type="submit">Buscar</button>
+        </form>
+      </div>
+    </div>
+  </nav>
+  <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-indicators">
+      <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"
+        aria-current="true" aria-label="Slide 1"></button>
+      <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"
+        aria-label="Slide 2"></button>
+      <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2"
+        aria-label="Slide 3"></button>
+    </div>
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img src="img/perrito-1.jpg" class="d-block w-100" alt="...">
+        <div class="carousel-caption d-none d-md-block">
+          <h5> GATOS DE DIVERSAS RAZAS.</h5>
+          <p>Tratamos con traquilida y amor a tus mininos favoritos y juguetones de casa donde sea.</p>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <img src="img/perrito-2.jpg" class="d-block w-100" alt="...">
+        <div class="carousel-caption d-none d-md-block">
+          <h5>PERROS DE DIVERSAS RAZAS</h5>
+          <p>Tratamiento, adiestramiento e inteligencia canina para amaestrar y dominar las obediencias de tu perro.</p>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <img src="img/perrito-3.jpg" class="d-block w-100" alt="...">
+        <div class="carousel-caption d-none d-md-block">
+          <h5>GANADO VACUNO DE RAZAS</h5>
+          <p>Tratamiento a cabezas de gando de cualquier parte del mundo e instalación de diversos equipos.</p>
+        </div>
+      </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+  </div>
+  </div>
+  </div>
+  <div class="card-group">
+    <div class="card" style="width: 18rem;">
+      <img src="img/perro_comiendo.jpg" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">TARJETA DE DESPARASITACIÓN</h5>
+        <p class="card-text">Debido a que los parásitos se introducen internamente de forma sigilosa es recomendable
+          desparasitar.
+        </p>
+        <a href="#" class="btn btn-primary">SUBIR</a>
+      </div>
+    </div>
+    <div class="card" style="width: 18rem;">
+      <img src="img/perrio-tarjeta-2.jpg" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">VITAMÍNICOS EFICIENTES</h5>
+        <p class="card-text">Las vitaminas son un grupo heterogéneo de compuestos orgánicos esenciales para el
+          crecimiento y mantenimiento de la vida animal. La mayoría de las vitaminas no son sintetizadas por el cuerpo
+          de los animales. Es así donde los medicamentos vitamínicos son necesarios.</p>
+        <a href="#" class="btn btn-primary">SUBIR</a>
+      </div>
+    </div>
+    <div class="card" style="width: 18rem;">
+      <img src="img/perro-tarjeta-3.jpg" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">MEJORA DE RAZA</h5>
+        <p class="card-text">SLa mejora genética (selección animal) se basa en el principio según el cual los productos
+          (leche, carne, lana, etc…) y los servicios (p. ej. ... La mejora puede ser alcanzada mediante la selección de
+          los animales genéticamente superiores para que éstos sean los progenitores de la siguiente generación.Esto
+          puede ser definido como la sumatoria del mejoramiento ambiental más el mejoramiento genético, donde los ganes
+          pueden expresarse sin ningún factor que los afecte. ... Diferencia ambiental de las interacciones entre el
+          genotipo y el medio ambiente.Esto puede ser definido como la sumatoria del mejoramiento ambiental más el
+          mejoramiento genético, donde los ganes pueden expresarse sin ningún factor que los afecte. ... Diferencia
+          ambiental de las interacciones entre el genotipo y el medio ambiente..</p>
+        <a href="#" class="btn btn-primary">SUBIR</a>
+      </div>
+    </div>
+  </div>
+  <!-- Footer -->
+  <footer class="text-center text-lg-start bg-light text-muted ">
+    <!-- Section: Social media -->
+
+    <!-- Section: Social media -->
+
+    <!-- Section: Links  -->
+    <section class="bg-dark d-flex justify-content-between" style="color: white;">
+      <div class="container text-center text-md-start mt-5 ">
+        <!-- Grid row -->
+        <div class="row mt-3">
+          <!-- Grid column -->
+          <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4 ">
+            <!-- Content -->
+            <h6 class="text-uppercase fw-bold mb-4">
+              <i class=""></i>ACERCA DE LA VETERINARIA
+            </h6>
+            <p style="text-align: justify;">
+              Los veterinarios diagnostican y tratan los animales enfermos y heridos. Lo que más les importa es el
+              bienestar de los animales y la protección de la salud pública, especialmente donde puedan transmitirse
+              enfermedades de animales a personas.
+            </p>
+
+          </div>
+          <!-- Grid column -->
+          <!-- Grid column -->
+
+          <!-- Grid column -->
+          <div class="col-md-3 col-lg-2 col-xl-3 mx-auto mb-4" style="text-align: left;">
+            <!-- Links -->
+            <h6 class="text-uppercase fw-bold mb-4">
+              UBÍCANOS EN
+            </h6>
+
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d62413.975830155636!2d-77.07224802089841!3d-12.120807500000009!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9105c823162a1eff%3A0xd09296c3723c9196!2sGROOMERS%20sede%20Jorge%20Chavez%20Miraflores!5e0!3m2!1ses-419!2spe!4v1624598486094!5m2!1ses-419!2spe"
+              width="300" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+
+          </div>
+          <!-- Grid column -->
+
+          <!-- Grid column -->
+          <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+            <!-- Links -->
+            <h6 class="text-uppercase fw-bold mb-4">
+              HORARIO DE ATENCIÓN
+            </h6>
+            <table class="table " style="color: white; text-align: center;">
+              <thead>
+
+              </thead>
+              <tbody>
+                <tr class="">
+                  <td>Lun-Vie:</td>
+                  <td></td>
+                  <td>10am-5pm</td>
+                </tr>
+                <tr>
+                  <td>Sáb-Dom:</td>
+                  <td></td>
+                  <td>9am-3pm</td>
+                </tr>
+                <tr>
+                  <td colspan="2">Feriados</td>
+                  <td>9am-1pm</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <!-- Grid column -->
+        </div>
+        <!-- Grid row -->
+      </div>
+    </section>
+    <!-- Section: Links  -->
+
+    <!-- Copyright -->
+    <div class="text-center p-4" style="background-color:#191919; color: white;">
+      © 2021 - 1 (USAT) Copyright:
+      <a class="text-reset fw-bold" href="https://www.instagram.com/harold.r.g/">Harold Ivan Roncal Gaslac</a>
+    </div>
+    <!-- Copyright -->
+  </footer>
+  <!-- Footer -->
+  <script src="Js/bootstrap.min.js"></script>
+</body>
+
+</html>

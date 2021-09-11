@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Css/bootstrap.min.css">
+    <link rel="stylesheet" href="Css/estilo_compras.css">
+    <link rel="shortcut icon" href="Img/tienda.png" type="image/x-icon">
+    <title>Compras</title>
+</head>
+
+<body>
+
+    <main id="contenedor" class="container">
+        <div class="row">
+            <nav class="col-md-12 con-sd-12">
+                <a  href="index.html">Inicio</a>
+                <a  href="index_productos.html" target="_blank">Productos</a>
+                <a href="index_proyectos.html">Proyectos</a>
+                <a href="index_Compras.html" data-bs-toggle="modal" data-bs-target="#staticBackdrop" class="active">Compras</a>
+                <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false"
+                    tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="staticBackdropLabel" style="color: red;">¡ES EL MOMENTO!
+                                </h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                    aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <!-- Imagen y texto -->
+
+                                <div class="d-flex align-items-center">
+                                    <div class="flex-shrink-0">
+                                        <img src="img/Herramientas EMERGENTE.png" alt="Producto"
+                                            style="width: 100px; height: 100px;">
+                                    </div>
+                                    <div class="flex-grow-1 ms-3">
+                                        <p style="color: black; text-align: justify;">Aprovecha nuestras increíbles
+                                            ofertas de fin de semana.
+                                            Miles de descuentos en herraminetas y maquinaria pesada.</p>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="modal-footer"><!-- Link de redirección a la página de compras -->
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                                <a type="button" class="btn btn-primary" href="index_Compras.html">Ir a la tienda</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <a href="index_nosotros.html" target="_blank">Nosotros</a>
+            </nav>
+            <header class="conteiner-fluid">
+                <div id="foto">
+                    <img src="Img/tienda.png" alt="PROMAC">
+                </div>
+                <div id="inicio">
+                    <button type="button" class="btn btn-primary btn-floating btn-light btn-lg" data-bs-toggle="modal"
+                        data-bs-target="#staticBackdrop"><i class="fas fa-shopping-cart"></i></button>
+                    <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false"
+                        tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="staticBackdropLabel" style="color: red;">¡ES EL MOMENTO!
+                                    </h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                        aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <!-- Imagen y texto -->
+
+                                    <div class="d-flex align-items-center">
+                                        <div class="flex-shrink-0">
+                                            <img src="img/Herramientas EMERGENTE.png" alt="Producto"
+                                                style="width: 100px; height: 100px;">
+                                        </div>
+                                        <div class="flex-grow-1 ms-3">
+                                            <p style="color: black; text-align: justify;">Aprovecha nuestras increíbles
+                                                ofertas de fin de
+                                                semana.
+                                                Miles de descuentos en herraminetas y maquinaria pesada.</p>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div class="modal-footer"> <!-- Link de redirección a la página de compras -->
+                                    <button type="button" class="btn btn-secondary"
+                                        data-bs-dismiss="modal">Cerrar</button>
+                                    <a type="button" class="btn btn-primary" href="index_Compras.html">Ir a la
+                                        tienda</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <a type="button" class="btn btn-floating btn-light btn-lg"><i class="fas fa-user"></i></a>
+                </div>
+                <br>
+                <h1 id="titulo" class="text-center">PROMAC</h1>
+            </header>
+        </div>
+
+        <div class="row">
+
+            <section class="col-md-12 col-sm-12">
+
+                <div class="titulo-productos">
+                    <h2>Productos</h2>
+                </div>
+
+                <!-- Productos -->
+                <main id="items" class="col-sm-12 row"></main>
+
+                <div class="row">
+
+                    <div class="col">
+                        <h2 id="titulo_carrito">Carrito de Compra</h2>
+                        <ul id="compras" class="list-group"></ul>
+                        <hr>
+                        <p id="datos_total" class="text-right">Total: S/ <span id="total" placeholder="total"></span>
+                        </p>
+                    </div>
+
+                    <div id="formulario" class="col">
+                        <form name="datos" class="form-inline col-sm-6">
+                            <div class="form-group">
+                                <label for="nombre">Nombre Completo: </label>
+                                <input name="nombre" type="nombre" class="form-control" id="nombre">
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email: </label>
+                                <input name="email" type="email" class="form-control" id="email">
+                            </div>
+                            <br>
+                            <button id="enviar_compra" type="button" class="btn btn-primary" onclick="escribir_info()"
+                            data-bs-toggle="modal" data-bs-target="#contenedorModalCompra">
+                            Enviar Compra
+                        </button> <br>
+                        <button id="vaciar_compras" class="btn btn-warning">Nueva Compra</button>
+                        </form>
+                    </div>
+                </div>
+
+
+
+
+
+            </section>
+
+
+        </div>
+
+
+        <!-- Footer -->
+        <div class="row">
+            <footer class=" text-center text-white" style="background-color:black;">
+                <!-- Grid container -->
+                <div class="container p-4" style="margin-bottom: 1%;">
+
+                    <!-- Section: Links -->
+                    <section class="">
+                        <!--Grid row-->
+                        <div class="row">
+
+                            <!--Grid column-->
+                            <div class="col-md-5 col-lg-4 col-xl-4 mx-auto mb-3">
+                                <h6 class="text-uppercase fw-bold mb-4">UBÍCA NUESTRA TIENDA EN:</h6>
+                                <p><i class="fas fa-home me-3"></i> Miraflores-Los Olivos, Lima, Perú</p>
+                                <p><i class="fas fa-envelope me-3"></i>
+                                    promacService@enterprise.com
+                                </p>
+                                <p><i class="fas fa-phone me-3"></i>+51 942 123 431</p>
+                            </div>
+                            <!--Grid column-->
+
+                            <!--Grid column-->
+                            <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+                                <h6 class="text-uppercase fw-bold mb-4">NUESTRAS REDES SOCIALES:</h6>
+
+                                <a class="btn btn-primary btn-floating m-1" style="background-color: #3b5998"
+                                    href="https://es-la.facebook.com" target="_blank" role="button"><i
+                                        class="fab fa-facebook"></i></a>
+                                <a class="btn btn-primary btn-floating m-1" style="background-color: #db7a2b"
+                                    href="https://www.tiktok.com/es" target="_blank" role="button"><i
+                                        class="fab fa-tiktok"></i></a>
+                                <a class="btn btn-primary btn-floating m-1" style="background-color: #6e24a0"
+                                    href="https://www.instagram.com/?hl=es-la" target="_blank" role="button"><i
+                                        class="fab fa-instagram"></i></i></a>
+                                <br>
+                                <a class="btn btn-primary btn-floating m-1" style="background-color: #000000"
+                                    href="https://github.com" target="_blank" role="button"><i
+                                        class="fab fa-github"></i></a>
+                                <a class="btn btn-primary btn-floating m-1" style="background-color: #23b8dd;"
+                                    href="https://twitter.com" target="_blank" role="button"><i
+                                        class="fab fa-twitter-square"></i></a>
+                                <a class="btn btn-primary btn-floating m-1" style="background-color: #cc1717"
+                                    href="https://www.youtube.com" target="_blank" role="button"> <i
+                                        class="fab fa-youtube-square"></i></a>
+                            </div>
+                            <!--Grid column-->
+
+                            <!--Grid column-->
+                            <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mb-3">
+                                <h6 class="text-uppercase fw-bold mb-4">MAPA DE UBICACIÓN:</h6>
+                                <table class="table text-center text-white">
+                                    <tbody class="fw-normal">
+                                        <tr>
+                                            <iframe
+                                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3962.0777467303633!2d-79.86522724971844!3d-6.760374295089207!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x904ceeeffd190ddd%3A0xce387ae6229aa09e!2sUSAT!5e0!3m2!1ses!2spe!4v1624290765410!5m2!1ses!2spe"
+                                                width="100%" height="80%" style="border:0;" allowfullscreen=""
+                                                loading="lazy"></iframe>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <!--Grid column-->
+                        </div>
+                        <!--Grid row-->
+                    </section>
+                    <!-- Section: Links -->
+
+                </div>
+                <!-- Grid container -->
+
+                <!-- Copyright -->
+                <div class="text-center p-3" style="background-color: rgba(49, 49, 49, 0.959)">
+                    © 2021 Copyright: Grupo 2-Diseño Web
+                </div>
+                <!-- Copyright -->
+
+            </footer>
+        </div>
+
+
+
+        <!--Ventana Modal-->
+        <div class="modal fade " id="contenedorModalCompra" tabindex="-1" aria-labelledby="exampleModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Compra Registrada</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+
+
+                    <div class="modal-body ">
+                        <img class="iconcarrito"
+                            src="https://images.vexels.com/media/users/3/200060/isolated/preview/e39eb7217c7b5157d2c9154564d76598-icono-de-carrito-de-compras-rosa-by-vexels.png"
+                            alt="">
+                        <div class="contTexto">
+                            <h6 class="modal_text">Nombres y Apellidos:</h6>
+                            <h6 id="info_nombre" class="modal_text">______________________________</h6> <br>
+                            <h6 class="modal_text">Email:</h6>
+                            <h6 id="info_email" class="modal_text">______________________________</h6><br>
+                            <h6 id="info_total" class="modal_text">Total Compra: S/.00,00</h6>
+                        </div>
+                    </div>
+
+                    <div class="modal-footer sinBorde">
+                        <button type="button" class="btn btn-secondary botonModal"
+                            data-bs-dismiss="modal">Aceptar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <script src="https://kit.fontawesome.com/14fbf06638.js" crossorigin="anonymous"></script>
+    <script src="Js/bootstrap.min.js"></script>
+    <script src="Js/script_compras.js"></script>
+</body>
+
+</html>
