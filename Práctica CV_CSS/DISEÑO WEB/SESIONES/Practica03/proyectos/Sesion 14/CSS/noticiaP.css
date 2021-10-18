@@ -1,0 +1,71 @@
+
+h1{
+     height: 60px;
+    color: rgb(0, 0, 0);
+    padding: 20px;
+    font-size: 300%;
+}
+.navegation{
+    width: 100%;
+    margin: 30px auto;
+    }
+.navegation ul{
+    list-style: none;
+}
+.menu > li{
+    position: relative;
+    display: inline-block;
+}
+.menu > li > a{
+    display: block;
+    padding: 15px 20px;
+    color: rgb(0, 0, 0);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-decoration: none;
+
+}
+
+.menu li a:hover{
+    color:black;
+    transition: all.3s;
+}
+
+header{
+    box-sizing: border-box; 
+    margin: -25px -6px; 
+    padding: 6px;
+
+}
+h3{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: rgb(0, 4, 255);
+}
+#caja3 h4{
+    margin-top: -8px;
+    font-size: 20px;
+}
+
+#caja3 p{
+    text-align: justify;
+    padding: 10px;
+}
+#caja4{
+    float: left;
+    padding: 10px;
+    border: inset;
+    margin: 3%;
+}
+
+#caja5{
+    background-color: rgb(251, 255, 0);
+    float: right;
+    color: rgb(0, 0, 0);
+    padding: 5px;
+    margin: 4%;
+    text-align: center;
+    border: dotted;
+}
+
+.noticia-texto{
+    margin: 4%;
+}

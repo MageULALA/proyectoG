@@ -1,0 +1,160 @@
+@font-face {
+    font-family: arcade;
+    src: url(../Fuentes/8-BIT\ WONDER.TTF);
+}
+
+@font-face {
+    font-family: nimbus;
+    src: url(../Fuentes/nimbus-sans-l.regular.otf);
+}
+
+body{
+    overflow-x: hidden;
+    font-family: nimbus;
+}
+
+.arcade{
+    font-family: arcade;
+}
+
+
+.logo{
+    width: 130px;
+    height: 60px;
+    margin-bottom: 2vh;
+}
+
+
+/*Header*/
+
+header{
+    border-bottom: #0d7377 3.5px solid ;
+}
+
+.logo_header{
+    width: 155px;
+    height: 70px;
+    margin-bottom: 2vh;
+}
+
+.miniIcono{
+    width: 37px;
+    height: 37px;
+}
+
+.miniIcono2{
+    width: 37px;
+    height: 39px;
+}
+
+#login{
+    border-radius: 16px;
+}
+
+.boton_nav{
+    font-family: arcade;
+    background-color: #212121;
+    border: solid white 3px;
+    border-radius: 17px;
+    font-size: 13px;
+}
+
+.boton_nav:hover{
+    background-color: #0d7377;
+
+}
+/*Contenido*/
+
+.marco_perfil{
+    background-color: gray;
+    border: black solid 2px;
+    border-radius: 100%;
+    height: 5cm;
+    width: 5cm;
+}
+
+.boton_perfil{
+   
+    
+    border: black solid 2px;
+    border-radius: 100%;
+    height: 5cm;
+    width: 5cm;
+}
+
+.barra{
+    height: 0.7cm;
+    border: black solid 4px;
+    border-radius: 8px;
+}
+
+.boton_usuario{
+    background-color:#212121;
+    border-color: rgb(79, 97, 97);
+    border-radius: 15px;
+    font-size: 15px;
+    color: white;
+}
+
+.borde_oscuro{
+    border: black solid 1.5px;
+}
+
+.link_experiencia:hover{
+    color: teal;
+}
+
+/*Footer*/
+.carta{
+    width: 90px;
+    height: 45px;
+    border-radius: 8px;
+    margin-bottom: 2vh;
+}
+
+.pie{
+  background-color: #212121;
+   
+}
+
+.boton_footer{
+    background-color: #0d7377;
+    border-color: rgb(79, 97, 97);
+    border-radius: 15px;
+    font-size: 14px;
+    font-family: arcade;
+    color: white;
+}
+
+
+.card-text{
+    font-size: 13px;
+}
+
+/*Usables*/
+
+.negrita{
+    font-weight: bold;
+}
+
+.color_dark{
+    background-color: #212121;
+}
+
+.color_gray_light{
+    background-color: #323232;
+}
+
+
+/*
+div{
+    border: solid black 1px;
+}
+
+*/
+
+#telefono::-webkit-inner-spin-button, 
+#telefono::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
+}

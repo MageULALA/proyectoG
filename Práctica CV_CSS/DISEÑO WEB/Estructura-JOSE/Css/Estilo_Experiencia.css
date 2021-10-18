@@ -1,0 +1,177 @@
+@font-face {
+    font-family: arcade;
+    src: url(../Fuentes/8-BIT\ WONDER.TTF);
+}
+
+@font-face {
+    font-family: nimbus;
+    src: url(../Fuentes/nimbus-sans-l.regular.otf);
+}
+
+@font-face {
+    font-family: corbel;
+    src: url(../Fuentes/Corbel\ Bold.ttf);
+}
+
+body{
+    overflow-x: hidden;
+    font-family: nimbus;
+    background-color: #323232;
+    color: white;
+}
+
+.arcade{
+    font-family: arcade;
+}
+
+.corbel{
+    font-family: corbel;
+}
+
+
+.logo{
+    width: 130px;
+    height: 60px;
+    margin-bottom: 2vh;
+}
+
+
+/*Header*/
+
+.barra_superior{
+    border-bottom: #0d7377 3.5px solid ;
+    background-color: white;
+}
+
+.boton_regresar{
+    border: 2.2px solid;
+    border-radius: 10px;
+}
+
+.img_header{
+    width: 14cm;
+}
+
+
+
+/*Contenido*/
+.marco_perfil{
+    background-color: gray;
+    border: white solid 3px;
+    border-radius: 100%;
+    height: 5cm;
+    width: 5cm;
+}
+
+.barra{
+    height: 0.7cm;
+    border: white solid 4px;
+    border-radius: 8px;
+    background-color: #323232;
+}
+
+.linea_divisora{
+    background-color: #0d7377;
+    height: 15px;
+    border: solid 1px #707070;
+}
+
+.texto_experiencia{
+    font-size: 18px;
+}
+
+.texto_formula{
+    font-family: corbel;
+    font-size: 22px;
+}
+
+.nivel_10{
+    background-color: #b79276;
+}
+
+.nivel_10_texto{
+    color: #b79276;
+}
+
+.nivel_25{
+    background-color:#76d2d2;
+}
+
+.nivel_25_texto{
+    color: #76d2d2;
+}
+
+
+.nivel_50{
+    background-color: #c9b972;
+}
+
+.nivel_50_texto{
+    color: #c9b972;
+}
+
+.nivel_75{
+    background-color: #4e7bc1;
+}
+
+.nivel_75_texto{
+    color: #4e7bc1;
+}
+
+.nivel_100{
+    background-color: #c64348;
+}
+
+.nivel_100_texto{
+    color: #c64348;
+}
+
+
+/*Footer*/
+.carta{
+    width: 90px;
+    height: 45px;
+    border-radius: 8px;
+    margin-bottom: 2vh;
+}
+
+.pie{
+  background-color: #212121;
+   
+}
+
+.boton_footer{
+    background-color: #0d7377;
+    border-color: rgb(79, 97, 97);
+    border-radius: 15px;
+    font-size: 14px;
+    font-family: arcade;
+    color: white;
+}
+
+
+.card-text{
+    font-size: 13px;
+}
+
+/*Usables*/
+
+.negrita{
+    font-weight: bold;
+}
+
+.color_dark{
+    background-color: #212121;
+}
+
+.color_gray_light{
+    background-color: #323232;
+}
+
+
+/*
+div{
+    border: solid black 1px;
+}
+*/
+

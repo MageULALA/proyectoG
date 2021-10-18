@@ -1,0 +1,34 @@
+.grid{
+display: grid;
+grid-template-columns: 200px 1fr 200px;
+grid-template-rows: 200px 1fr 100px ;
+grid-template-areas: "head head head " 
+ "menu main añadido " 
+  "foot foot foot " ;
+
+}
+
+.a{
+grid-area: head;
+background-color: gold;
+}
+
+.b{
+    grid-area: menu;
+    background-color: darkorchid;
+    }
+
+.c{
+    grid-area: main;
+    background-color: darkseagreen;
+    } 
+
+.d{
+    grid-area: foot;
+    background-color: dimgrey;
+}
+
+.e{
+    grid-area: "añadido" ;
+    background-color: indigo;
+}

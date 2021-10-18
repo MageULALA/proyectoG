@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="Img/favicon_black.png" type="image/x-icon">
+    <link rel="stylesheet" href="Css/bootstrap.min.css">
+    <link rel="stylesheet" href="Css/Estilo_Usuario.css">
+    <title>Perfil</title>
+</head>
+
+<body>
+
+    <div class="fluid">
+
+        <div class="row ">
+            <header class="p-0 bg-dark text-white">
+                <div class="container-fluid pie">
+                    <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start ">
+
+                        <a href="Index.html"><img src="Img/Logo-White.png" class="logo_header mx-4 my-2" alt=""></a>
+
+
+                        <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+                            <li><a href="Index.html" class="nav-link py-1 mx-2 text-white boton_nav">Inicio</a></li>
+                            <li><a href="#" class="nav-link py-1 mx-2 text-white boton_nav">Loot</a></li>
+                            <li><a href="#" class="nav-link py-1 mx-2 text-white boton_nav">Box</a></li>
+                            <li><a href="Noticias.html" class="nav-link py-1 mx-2 text-white boton_nav">Noticias</a></li>
+                            <li><a href="#" class="nav-link py-1 mx-2 text-white boton_nav">Nosotros</a></li>
+                        </ul>
+
+
+                        <div class="text-end">
+                            <a href="facebook.com"><img src="Img/lupa.png" class="miniIcono2 me-2" alt=""></a>
+
+                            <button type="button" class="btn btn-light me-2 fw-bold" id="login">Registrarse | Iniciar
+                                Sesión</button>
+                            <a data-bs-toggle="offcanvas" href="#offcanvasExample" role="button"
+                                aria-controls="offcanvasExample"><img src="Img/carrito.png" class="miniIcono me-4"
+                                    alt=""></a>
+                        </div>
+                    </div>
+                </div>
+            </header>
+        </div>
+
+
+        <div class="row">
+            <section class="col">
+
+                <!-- Izquierda -->
+                <div class="row px-5">
+
+                    <div class="col-lg-4 col-md-12 col-sd-12 d-flex justify-content-center p-3">
+
+                        <div class="row text-center">
+                            <div class="col-12 d-flex justify-content-center align-items-end">
+                                <img class="marco_perfil" src="Img/Perfil_1.jpg" alt="">
+
+                            </div>
+
+                            <h4 id="nombre_usuario" class="arcade col-12 mt-2">Pedrito Navaja</h4>
+                            <div class="col-7 mt-2 text-start mx-auto">
+
+                                <h4 class="fw-bold ">Nivel 1: <a href="Experiencia.html"><i
+                                            style="float: right; color: black;" class="far fa-question-circle"></i></a>
+                                </h4>
+                                <div class="progress barra">
+
+                                    <div class="progress-bar" role="progressbar" style="width: 50%; border-radius: 2px;"
+                                        aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+
+                                </div>
+                            </div>
+
+                            <h6 class="arcade col-12 mt-4">FECHA DE REGISTRO</h6>
+                            <h5 id="fecha_registro" class="fw-bold">01/06/2021</h5>
+
+                            <h6 class="arcade col-12 mt-4">REGISTRO DE COMPRAS</h6>
+                            <a class="col-6 btn btn-dark boton_usuario mx-auto" href="">Consultar</a>
+
+                            <h6 class="arcade col-12 mt-4">COMPRAS TOTALES</h6>
+                            <h5 id="num_compras" class="fw-bold">3</h5>
+
+
+                        </div>
+                    </div>
+
+                    <!-- Derecha -->
+                    <div class="col-lg-8 col-md-12 col-sd-12 px-5 my-3 borde_oscuro">
+
+                        <!-- 1-->
+                        <div class="row mt-4">
+                            <div class="col-lg-3 fw-bold">
+                                Nombres y Apellidos:
+                            </div>
+                            <div class="col-lg-9">
+                                <input id="nombres" value="Pedro Navaja Guzmán Guerrero" class="w-100" type="text" disabled>
+                            </div>
+                        </div>
+                        <hr>
+                        <!-- 2 -->
+                        <div class="row mt-1">
+                            <div class="col-lg-3 fw-bold">
+                                Usuario:
+                            </div>
+                            <div class="col-lg-9">
+                                <input id="usuario" maxlength="10"  value="PEDRITO NAVAJA" class="w-100" type="text" disabled>
+                            </div>
+
+                        </div>
+                        <hr>
+                        <!-- 3 -->
+                        <div class="row mt-1">
+                            <div class="col-lg-3 fw-bold">
+                                Fecha de Nacimiento:
+                            </div>
+                            <div class="col-lg-9">
+                                <input id="fecha" type="date" value="2001-07-22" class="w-100" type="text" disabled>
+                            </div>
+                        </div>
+                        <hr>
+                        <!-- 4 -->
+                        <div class="row mt-1">
+                            <div class="col-lg-3 fw-bold">
+                                Correo Electrónico:
+                            </div>
+                            <div class="col-lg-9">
+                                <input id="correo" value="navajachicharito@gmail.com" class="w-100" type="text" disabled>
+                            </div>
+                        </div>
+                        <hr>
+                        <!-- 5 -->
+                        <div class="row mt-1">
+                            <div class="col-lg-3 fw-bold">
+                                Correo Alternativo:
+                            </div>
+                            <div class="col-lg-9">
+                                <input id="correoAlt" value="LapadulaAdoptame@gmail.com" class="w-100"  disabled>
+                            </div>
+                        </div>
+                        <hr>
+                        <!-- 6 -->
+                        <div class="row mt-1 ">
+                            <div  class="col-lg-3 fw-bold">
+                                Contraseña:
+                            </div>
+                            <div class="col-lg-9">
+                                <input type="password" value="quieroAprobarDiseño" id="contra"class="w-100"  disabled>
+                            </div>
+                        </div>
+                        <hr>
+                        <!-- 7 -->
+                        <div class="row mt-1">
+                            <div class="col-lg-3 fw-bold">
+                                Telefono Celular:
+                            </div>
+                            <div class="col-lg-9">
+                                <input id="telefono" value="960123546"  class="w-100" type="number" disabled>
+                            </div>
+                        </div>
+                        <hr>
+                        <!-- 8-->
+                        <div class="row mt-1">
+                            <div class="col-lg-3 fw-bold">
+                                Dirección:
+                            </div>
+                            <div class="col-lg-9">
+                                <input id="direccion" value="Av. Los Ángeles de Charlie, Puno, Perú." class="w-100" type="text" disabled>
+                            </div>
+                        </div>
+                        <hr>
+                        <!-- 9 -->
+                        <div class="row mt-1 d-flex justify-content-center mb-2">
+                            <button id="boton_editar" class="col-lg-4 col-7 btn btn-dark boton_usuario mx-auto mt-1" onclick="activar_campos()"> <i
+                                    class="fas fa-pencil-alt"></i> Actualizar Información</button>
+                            <button id="boton_guardar" class="col-lg-4 col-7 btn btn-dark boton_usuario mx-auto mt-1" disabled onclick="guardar_campos()"> <i
+                                            class="fas fa-save"></i> Guardar Información</button>
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- Desplegable-->
+                <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasExample"
+                    aria-labelledby="offcanvasExampleLabel">
+                    <div class="offcanvas-header" style="border-bottom: #0d7377 solid 3px;">
+                        <h2 class="offcanvas-title text-decoration-underline" id="offcanvasExampleLabel">Confirmar
+                            Compra</h2>
+                        <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"
+                            aria-label="Close"></button>
+                    </div>
+                    <div class="offcanvas-body">
+                        <!-- Monto-->
+                        <div>
+
+                            <h2 class="ms-2 fw-bold">Sub Total: <span id="sub_Total" class="ms-4">S/.0000,00</span></h2>
+                            <h2 class="ms-2 fw-bold">Descuento: <span id="sub_Total" class="ms-2">S/.0000,00</span></h2>
+
+                            <h6 class="ms-2 mt-4" style="font-size: 13px;">¿Tienes un código de Descuento?</h6>
+                            <span class="ms-2"><input id="text_codigo" class="text-center" placeholder="xxxxxxxx"
+                                    type="text" style="width: 70%; border-radius:15px;"> <button
+                                    class="btn btn-dark py-0 ms-2 mt-1 mb-2">Canjear</button></span>
+                            <hr>
+                            <h2 class="ms-2  fw-bold">Total: <span id="sub_Total" class=""
+                                    style="margin-left: 26%;">S/.0000,00</span></h2>
+                        </div>
+
+                        <!-- Compra-->
+                        <div class=""
+                            style="height: 7cm; overflow-y: scroll; overflow-x: hidden; border: solid black 1px;">
+                            <ul id="compras" class="list-group"></ul>
+                        </div>
+
+
+                        <!-- Método de Pago-->
+                        <div class="text-center mt-3">
+
+                            <button type="button" class="btn btn-outline-dark"
+                                style="font-size: 120%; border-radius: 10px;" data-bs-toggle="modal"
+                                data-bs-target="#contenedorModalCompra">
+                                Agregar Método de Pago <i class="fas fa-angle-double-right"></i>
+                            </button>
+
+                            <div class="form-check d-flex justify-content-center mt-2">
+                                <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                                <label class="form-check-label ms-2" for="defaultCheck1">
+                                    Recordar Forma de Pago
+                                </label>
+                            </div>
+                        </div>
+
+                        <!-- Botón de COmpra-->
+                        <div class="d-flex justify-content-center mt-3">
+                            <a class="col-12 btn btn-dark boton_usuario mx-auto" href="">Finalizar Compra</a>
+                        </div>
+
+                        <!--Ventana Modal-->
+                        <div class="modal fade " id="contenedorModalCompra" tabindex="-1"
+                            aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+
+                                    <div class="modal-header">
+                                        <h5 class="modal-title fw-bold" id="exampleModalLabel">Métodos Disponibles</h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                            aria-label="Close"></button>
+                                    </div>
+
+
+                                    <div class="modal-body ">
+                                        <div class="col-lg-12 text-center">
+                                            <a href="https://www.visa.com.pe/pague-con-visa/tarjetas/credito.html"
+                                                target="blank"><img class="p-3" src="Img/visa.png"
+                                                    style="background-color: #30315c; width: 20%; border: gray solid 1px; border-radius: 6px;"
+                                                    alt=""></a>
+                                            <a href="https://www.mastercard.com.pe/es-pe/consumidores/encontrar-una-tarjeta.html"
+                                                target="blank"><img class="p-0" src="Img/Mastercard.png"
+                                                    style=" background-color: #231f20; width: 18.5%; border: gray solid 1px; border-radius: 6px;"
+                                                    alt=""></a>
+                                            <a href="https://www.paypal.com/signin?returnUri=https%3A%2F%2Fwww.paypal.com%2Fcgi-bin%2Fwebscr%3fcmd%3d_account"
+                                                target="blank"><img class="p-1" src="Img/paypal.png"
+                                                    style=" width: 20%; border: gray solid 1px; border-radius: 6px;"
+                                                    alt=""></a>
+                                            <a href="http://pagoefectivo.pe/formulario/suscribete" target="blank"><img
+                                                    class="p-3" src="Img/pagoefectivo.png"
+                                                    style="background-color: #ffce00; width: 20%; border: gray solid 1px; border-radius: 6px;"
+                                                    alt=""></a>
+                                        </div>
+                                        <hr>
+                                        <div class="row p-2">
+                                            <span class="px-0">Número de Tarjeta</span>
+                                            <input type="text">
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-lg-6 px-2">
+                                                <span>Fecha de Expiración</span>
+                                                <input type="text" style="width: 100%;">
+                                            </div>
+                                            <div class="col-lg-6 px-2">
+                                                <span>Código CV</span>
+                                                <input type="text" style="width: 100%;">
+                                            </div>
+                                        </div>
+                                        <div class="row p-2">
+                                            <span class="px-0">Titular de la Tarjeta</span>
+                                            <input type="text">
+                                        </div>
+
+                                    </div>
+
+                                    <div class="modal-footer d-flex justify-content-center">
+                                        <button type="button" style="width: 70%; border-radius: 10px;" class="btn btn-dark botonModal"
+                                            data-bs-dismiss="modal">Aceptar</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!--Ventana Modal-->
+                    </div>
+                </div>
+                <!-- Desplegable-->
+
+            </section>
+        </div>
+
+
+        <div class="row ">
+            <!-- Footer -->
+            <footer class="bg-dark text-center text-white">
+                <!-- Grid container -->
+                <div class="container-fluid p-2 pie">
+
+                    <!-- Section: Links -->
+                    <section class="">
+                        <!--Grid row-->
+                        <div class="row">
+
+                            <!--Grid column-->
+                            <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+                                <img class="logo" src="Img/Logo-White.png" alt="Logo">
+                                <h6 class="text-uppercase">La caja hacia tu nueva realidad</h6>
+                            </div>
+                            <!--Grid column-->
+
+                            <!--Grid column-->
+                            <div class="col-lg-6 col-md-6 mb-4 mb-md-0">
+                                <img class="carta" src="Img/carta.jpg" alt="Logo">
+                                <br>
+                                <a class="btn btn-light boton_footer" href="">CONTACTANOS</a>
+
+
+                            </div>
+                            <!--Grid column-->
+
+
+                            <!--Grid column-->
+                            <div class="col-lg-3 col-md-12 mb-4 mb-md-0 align-self-end ">
+
+
+                                <!-- Facebook -->
+                                <a class="btn btn-primary" style="background-color: #3b5998;" href="#!" role="button"><i
+                                        class="fab fa-facebook-f"></i></a>
+
+                                <!-- Instagram -->
+                                <a class="btn btn-primary mx-1" style="background-color: #ac2bac;" href="#!"
+                                    role="button"><i class="fab fa-instagram"></i></a>
+
+                                <!-- Twitter -->
+                                <a class="btn btn-primary" style="background-color: #55acee;" href="#!" role="button"><i
+                                        class="fab fa-twitter"></i></a>
+
+                                <h6 class="my-2">isneoboxlife@gmail.com</h6>
+
+                            </div>
+                            <!--Grid column-->
+                        </div>
+                        <!--Grid row-->
+                    </section>
+                    <!-- Section: Links -->
+                </div>
+                <!-- Grid container -->
+                <!-- Copyright -->
+       <div class="text-center p-2" style="background-color: #323232">
+        © 2021 WebMaster:
+      <a class="text-white" href="#" style="text-decoration: none;">Sköll Development - Grupo 02</a>
+      </div>
+    <!-- Copyright -->
+            </footer>
+            <!-- Footer -->
+        </div>
+
+
+    </div>
+
+
+
+    <script src="https://kit.fontawesome.com/14fbf06638.js" crossorigin="anonymous"></script>
+    <script src="Js/bootstrap.min.js"></script>
+    <script src="Js/Script_Usuario.js"></script>
+</body>
+
+</html>

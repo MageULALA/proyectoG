@@ -1,0 +1,13 @@
+body{
+    background-image: url(imagenes/madera.jpg);
+
+}
+.botonArriba{
+    position: fixed;
+    width: 50%;
+    height: 50%;
+    bottom: -230px;
+    left: 93%;
+    border-radius: 50%;
+
+} 

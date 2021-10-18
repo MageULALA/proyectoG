@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>  Encuesta  Cinematográfica   </title>
+    <link rel="icon" href="img/favicon.ico">
+    <link rel="stylesheet" href="estilo.css">
+
+</head>
+
+
+<body>
+    <body background="green">
+        
+    </body>
+    <div style="width: 40%;" id="Contenedor" >
+        <fieldset id="formuladrio" style="background-color: orange;">
+        <h2>Encuesta de Cine: Nominadas al Oscar 2021</h2>
+        <form id="formulario1" name="formulario1" method="post" action="data.php"></form>
+        <fieldset style="background-color: white;" id="datos_personales" >
+            <legend>Datos Personales</legend><br>
+            <label for="nombre">Nombre</label>
+            <input type="text" name="nombre" id="nombre" > <br> 
+            
+            <br>
+
+            <label for="Apellido">Apellido</label>
+            <input type="text" name="apellido" id="apellido" ><br>
+
+            <br>
+            <label for="DNI"> DNI</label>
+            <input type="text" name="dni" id="dni" maxlength="9" >
+            <br>         
+            <br>
+            <label for="edad">Edad:</label>
+            <input type="text" id="edad" name="edad"><br>
+            <br>
+
+            <h>GÉNERO <br></h>
+            <input type="radio" id="masculino" name="genero" value="masculino">
+            <label for="masculino">Masculino</label><br>
+
+            <input type="radio" id="femenino" name="genero" value="femenino">
+            <label for="femenino">Femenino</label><br>
+
+            <input type="radio" id="otro" name="genero" value="otro">
+            <label for="otro">Otro</label>
+        </fieldset>
+
+    </form>
+</div>
+
+<div id="Contenedor-2">
+    <form id="Fomulario2" name="Fomulario2" method="post" action="data.php">
+        <fieldset id="Mejor-Pelicula" style="background-color: orange;">
+            <legend>Mejor Pelicula</legend>
+            <input type="radio" id="pelicula-1" name="pelicula" value="pelicula">
+            <label for="pelicula">Pelicula 1</label><br>
+
+            <input type="radio" id="pelicula-2" name="pelicula" value="pelicula-2">
+            <label for="pelicula-2">Pelicula 2</label><br>
+
+            <input type="radio" id="pelicula-3" name="pelicula" value="pelicula-3">
+            <label for="pelicula-3">Pelicula 3</label>
+
+        </fieldset>
+    </form>
+
+</div>
+
+
+<div id="Contenedor-3">
+    <form id="Fomulario3" name="Fomulario3" method="post" action="data.php">
+        <fieldset id="Pelicula-vista" style="background-color: orange;">
+            <legend>Selecciona la pelicula que hayas visto</legend>
+            <input type="checkbox" id="peli1" name="vehicle1" value="P01">
+            <label for="peli1">Pelicula 01</label><br>
+
+            <input type="checkbox" id="peli2" name="peli2" value="P02">
+            <label for="peli2">Pelicula 02</label><br>
+
+            <input type="checkbox" id="peli3" name="peli3" value="P03">
+            <label for="peli3">Pelicula 03</label><br>
+
+            <input type="checkbox" id="peli4" name="peli4" value="P04">
+            <label for="peli4">Pelicula 04</label><br>
+
+            <input type="checkbox" id="peli5" name="peli5" value="P05">
+            <label for="peli5">Pelicula 05</label>
+        </fieldset>
+    </form>
+</div>
+
+
+
+
+<div id="Contenedor-4">
+    <form>
+        <fieldset  style="background-color: orange;">
+            <legend>Argumento de tu película preferida</legend>
+            <textarea name="argumento" id="argumento" cols="50" rows="14"></textarea>
+        </fieldset>
+        <br>
+        <input type="reset" value="Borrar Formulario"> <input type="submit" value="Enviar">
+    </form>
+</div>
+
+
+<img class="img" src="imagenes/peli.jpeg" >
+<img class="img1" src="imagenes/peli2.jpg" >
+
+</body>
+</html>

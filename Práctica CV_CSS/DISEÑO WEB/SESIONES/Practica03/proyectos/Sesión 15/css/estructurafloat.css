@@ -1,0 +1,44 @@
+.grid {
+    max-width: 100%;
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 200px 1fr 200px;
+    grid-template-rows: 200px 1fr 100px;
+    grid-template-areas: "my-header my-header my-header" "my-nav my-section my-aside" "my-footer my-footer my-footer";
+}
+
+
+header{
+    
+    background-color: blueviolet;
+    height: 150px;
+}
+
+nav{
+    background-color: cornflowerblue;
+    width: 25%;
+}
+
+section{
+    background-color: indigo;
+    width: 50%;
+}
+
+aside{
+    background-color: magenta;
+    width: 25%;
+}
+
+footer{
+    clear: left;
+    background-color: darkorchid;
+    height: 100px;
+}
+
+nav,
+section,
+aside{
+    float: left;
+    height: 350px;
+}
+
