@@ -23,3 +23,12 @@ def uso_login(request):
 #def listarServicios(request):
    # objServicios= Servicio.objects.all()
     #return render(request, "index General.html",{"servicios":objServicios})
+
+def uso_indexUsuario(request):
+    now = datetime.datetime.now()
+    archivo_html= open("D:/Windows 10/Documentos/Ciclo2021-II/APP WEB/ProyectosDjango/proyectoG/proyecto/BOOM/index Usuario.html")
+    templ2=Template(archivo_html.read())
+    archivo_html.close()
+    documento=templ2.render(Context({'current_date': now}))
+    return HttpResponse(documento)
+

@@ -33,7 +33,6 @@ body {
     font-weight: normal;
     overflow-x: hidden;
     font-family: 'Poppins', sans-serif;
-    
     background-image: url(../images/fondoCuenta.jpg);
 }
 
@@ -253,7 +252,7 @@ button {
 }
 
 .custom_menu li a:hover {
-    color: #f26522;
+    color: #ffffff;
 }
 
 
