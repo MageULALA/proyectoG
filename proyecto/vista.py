@@ -20,6 +20,6 @@ def uso_login(request):
     documento=templ2.render(Context({'current_date': now}))
     return HttpResponse(documento)
 
-def listarServicios(request):
-    objServicios= Servicio.objects.all()
-    return render(request, "index General.html",{"servicios":objServicios})
+#def listarServicios(request):
+   # objServicios= Servicio.objects.all()
+    #return render(request, "index General.html",{"servicios":objServicios})
