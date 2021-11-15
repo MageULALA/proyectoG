@@ -26,6 +26,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('indexGeneral/', uso_plantilla),
     path('login/', uso_login),
+   # path('listarServicios/', listarServicios)
 
 ]
 
