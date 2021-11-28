@@ -1,0 +1,67 @@
+
+{% extends "base.html" %}
+
+{% load static %}
+{% block estilos %}
+<link rel="stylesheet" href="{% static 'css/formulario.css' %}">
+{% endblock %}
+{% block titulo %}Registrate y empieza ahora| BOOM {% endblock %}
+
+{% block masopcionesNav %}
+<a href="{% url 'inicio'  %}" id="registrarme" class="navbar-brand" style="font-size: 1.1em;">Registrarme</a>
+<a href="" id="ingresar" class="navbar-brand" style="font-size: 1.1em;">Ingresar</a>
+{% endblock %}
+
+{% block cuerpo %} 
+<div class="container">
+    <form action="" class="form" id="form" autocomplete="off">
+      <p class="form-titulo">Regístrate</p>
+      <div class="form-input myname">
+        <input type="text" id="myname">
+        <label for="myname">Nombres</label>
+        <p class="mensajeError"></p>
+      </div>
+      <div class="form-input email">
+        <input type="email" id="email">
+        <label for="email">Correo electrónico</label>
+        <p class="mensajeError"></p>
+      </div>
+      <div class="form-input mobile">
+        <input type="text" id="mobile">
+        <label for="mobile">Celular</label>
+        <p class="mensajeError"></p>
+      </div>
+      <div class="form-input password">
+        <input type="password" name="password" placeholder="Contraseña" class="form-control between-input" required="" id="password">
+        <button onclick="showPassword()" class="btn btn-outline-secondary between-input bg-alternativo button-inputs border-bottom-0" type="button" id="button-show"><i id="view" class="bi bi-eye" aria-hidden="true"></i></button><label for="password">Contraseña</label>
+        
+        <p class="mensajeError"></p>
+      </div>
+      <div class="form-input repeatPassword">
+        <input type="password" id="id_repeated_password"><label for="repeatPassword">Repetir Contraseña</label>
+        <button onclick="showRepeatedPassword()" class="btn btn-outline-secondary bottom-input bg-alternativo button-inputs" type="button" id="button-repeated-show"><i id="view-repeated" class="bi bi-eye" aria-hidden="true"></i></button>
+        
+        <p class="mensajeError"></p>
+      </div>
+      <div class="form-termsAndConditions termsAndConditions">
+        <input type="checkbox" id="termsAndConditions">
+        <label for="termsAndConditions">He leído y acepto los </label>
+        <a href="#">Términos y Condiciones</a>
+        <p class="mensajeError"></p>
+      </div>
+      <div class="form-boton" >
+        <input type="submit" value="Enviar">
+      </div>
+      <p class="mensajeCorrecto"></p>
+    </form>
+  </div>
+{% endblock %}
+
+
+{% block agregadoFoot %} 
+{% endblock %}
+
+{% block funciones %}
+<script src="{% static 'js/formulario.js' %}"></script>
+<script src="{% static 'js/contrasenas.js' %}"></script>
+{% endblock %}

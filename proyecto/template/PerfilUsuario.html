@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
-
+    {% load static %}
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Apock web design</title>
+    <title>Mi perfil</title>
     <link rel="stylesheet" type="text/css" href="https://necolas.github.io/normalize.css/8.0.1/normalize.css">
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
-    <link rel="stylesheet" href="perfil.css">
+    <link rel="stylesheet" href="{% static 'css/perfil.css' %}">
 </head>
 
 
@@ -17,7 +17,7 @@
             <div class="portada-perfil" style="background-image: url('https://drive.google.com/file/d/1eJuD8QJNmSp8P7Obt_N4qcjlRhcmOwDV/view?usp=sharing');">
                 <div class="sombra"></div>
                 <div class="avatar-perfil">
-                    <img src="recursosPerfil/FtoPerfil.PNG" alt="img">
+                    <img src="{% static 'images/FtoPerfil.PNG' %}" alt="img">
                     <a href="#" class="cambiar-foto">
                         <i class="fas fa-camera"></i> 
                         <span>Cambiar foto</span>

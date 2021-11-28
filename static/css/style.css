@@ -5,6 +5,7 @@
 @import url(normalize.css);
 @import url(icomoon.css);
 @import url(css/font-awesome.min.css);
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.1/font/bootstrap-icons.css");
 @import url(meanmenu.css);
 @import url(owl.carousel.min.css);
 @import url(swiper.min.css);
@@ -62,7 +63,7 @@ h6 {
 }
 
 h1 {
-    font-size: 24px
+    font-size: 21px
 }
 
 h2 {
@@ -93,6 +94,7 @@ h6 {
     box-sizing: border-box;
 }
 
+
 h1 a,
 h2 a,
 h3 a,
@@ -102,6 +104,12 @@ h6 a {
     color: #212121;
     text-decoration: none!important;
     opacity: 1
+
+}
+
+h1 a:hover{
+color: #3f3d59;
+font-size: 27px;
 }
 
 button:focus {
@@ -259,7 +267,7 @@ button {
 }
 
 .custom_menu li a:hover {
-    color: #f26522;
+    color: #a0ce4e;
 }
 
 
@@ -321,7 +329,7 @@ button {
 }
 
 .sidenav a:hover {
-    color: #f26522;
+    color: #a0ce4e;
 }
 
 .sidenav .closebtn {
@@ -440,7 +448,7 @@ button {
 }
 
 .login_menu li a:hover {
-    color: #f26522;
+    color: #a0ce4e;
 }
 
 .padding_10 {
@@ -464,7 +472,7 @@ button {
 }
 
 a:hover {
-    color: #f26522;
+    color: #a0ce4e;
     text-decoration: underline;
 }
 
@@ -558,7 +566,7 @@ a:hover {
 
 .fashion_taital {
     width: 100%;
-    font-size: 40px;
+    font-size: 30px;
     color: #30302e;
     text-align: center;
     font-weight: bold;
@@ -590,7 +598,8 @@ a:hover {
 .price_text {
     width: 100%;
     font-size: 16px;
-    color: #f26522;
+    font-weight:lighter;
+    color: #3f3d59;
     text-align: center;
     margin: 0px;
 }
@@ -599,7 +608,7 @@ a:hover {
     width: 100%;
     text-align: center;
     margin: 50px 0px;
-    min-height: 370px;
+    min-height: 220px;
 }
 
 .btn_main {
@@ -608,17 +617,18 @@ a:hover {
 }
 
 .buy_bt {
-    float: left;
+    float: right;
     width: 100%;
 }
 
 .buy_bt a {
     width: 100%;
     font-size: 16px;
-    color: #f26522;
+    color: #a0ce4e;
     background-color: transparent;
     text-align: right;
     font-weight: bold;
+    -webkit-text-stroke: 0.2px rgb(29, 29, 29);
 }
 
 .buy_bt a:hover {
@@ -638,11 +648,23 @@ a:hover {
     color: #262626;
     background-color: transparent;
     text-align: right;
+   
 }
 
 .seemore_bt a:hover {
     background-color: transparent;
-    color: #f26522;
+    color: #a0ce4e;
+    font-weight: bolder;
+}
+.seemore_bt a:focus {
+    background-color: transparent;
+    color: #a0ce4e;
+    font-weight: bolder;
+}
+
+.seemore_bt  i:hover {
+    background-color: transparent;
+
 }
 
 #main_slider a.carousel-control-next {
@@ -659,7 +681,7 @@ a:hover {
 #main_slider .carousel-control-prev {
     width: 55px;
     height: 55px;
-    background-color: #30302e;
+    background-color: #000000;
     opacity: 1;
     font-size: 30px;
     color: #ffffff;
@@ -670,96 +692,13 @@ a:hover {
 #main_slider .carousel-control-prev:focus,
 #main_slider .carousel-control-prev:hover {
     color: #fff;
-    background-color: #f26522;
+    background-color: #3f3d59;
 }
 
 
 /* fashion section end */
 
 
-/* electronic section start */
-
-.electronic_img {
-    width: 100%;
-    text-align: center;
-    margin: 50px 0px;
-    min-height: 293px;
-}
-
-#electronic_main_slider a.carousel-control-next {
-    right: 615px;
-    top: 105%;
-}
-
-#electronic_main_slider a.carousel-control-prev {
-    left: 615px;
-    top: 105%;
-}
-
-#electronic_main_slider .carousel-control-next,
-#electronic_main_slider .carousel-control-prev {
-    width: 55px;
-    height: 55px;
-    background-color: #30302e;
-    opacity: 1;
-    font-size: 30px;
-    color: #ffffff;
-}
-
-#electronic_main_slider .carousel-control-next:focus,
-#electronic_main_slider .carousel-control-next:hover,
-#electronic_main_slider .carousel-control-prev:focus,
-#electronic_main_slider .carousel-control-prev:hover {
-    color: #fff;
-    background-color: #f26522;
-}
-
-
-/* electronic section end */
-
-
-/* jewellery section start */
-
-.jewellery_section {
-    width: 100%;
-    float: left;
-    padding-bottom: 50px;
-}
-
-.jewellery_img {
-    width: 100%;
-    text-align: center;
-    margin: 50px 0px;
-    min-height: 293px;
-}
-
-#jewellery_main_slider a.carousel-control-next {
-    right: 615px;
-    top: 75%;
-}
-
-#jewellery_main_slider a.carousel-control-prev {
-    left: 615px;
-    top: 75%;
-}
-
-#jewellery_main_slider .carousel-control-next,
-#jewellery_main_slider .carousel-control-prev {
-    width: 55px;
-    height: 55px;
-    background-color: #30302e;
-    opacity: 1;
-    font-size: 30px;
-    color: #ffffff;
-}
-
-#jewellery_main_slider .carousel-control-next:focus,
-#jewellery_main_slider .carousel-control-next:hover,
-#jewellery_main_slider .carousel-control-prev:focus,
-#jewellery_main_slider .carousel-control-prev:hover {
-    color: #fff;
-    background-color: #f26522;
-}
 
 
 /* loader bar css start */
@@ -817,7 +756,7 @@ a:hover {
 .footer_section {
     width: 100%;
     float: left;
-    background-color: #252525;
+    background-color: #3f3d59;
     height: auto;
 }
 
@@ -863,11 +802,13 @@ input.mail_bt::placeholder {
 }
 
 .subscribe_bt a {
-    color: #f26522;
+    color: #a0ce4e;
+    font-weight: bold;
 }
 
 .subscribe_bt a:hover {
     color: #ffffff;
+
 }
 
 .footer_menu {
@@ -894,7 +835,7 @@ input.mail_bt::placeholder {
 }
 
 .footer_menu li a:hover {
-    color: #f26522;
+    color: #a0ce4e;
 }
 
 .location_main {
@@ -916,7 +857,7 @@ input.mail_bt::placeholder {
 }
 
 .location_main a:hover {
-    color: #f26522;
+    color: #a0ce4e;
 }
 
 
@@ -928,7 +869,7 @@ input.mail_bt::placeholder {
 .copyright_section {
     width: 100%;
     float: left;
-    background-color: #252525;
+    background-color: #3f3d59;
     height: auto;
 }
 
@@ -946,7 +887,7 @@ input.mail_bt::placeholder {
 }
 
 .copyright_text a:hover {
-    color: #f26522;
+    color:#a0ce4e;
 }
 
 .margin_top90 {

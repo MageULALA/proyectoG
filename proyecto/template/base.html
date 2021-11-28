@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+   {% load static %}
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/jquery.mCustomScrollbar.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/owl.carousel.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="{% static 'css/stylegeneral.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css">
+    {% block estilos %}{% endblock %}
+    <title>{% block titulo %} {% endblock %}</title>
+</head>
+  <body>
+   <div class="container-fluid">
+    <!-- BARRA NAVEGACIÓN -->
+    <div class="inicio" >
+      <div class="pre-navbar">
+        <div class="row align-items-center">
+          <div id="social" class="col align-self-start">
+            <a href=""><i class="bi bi-facebook" style="color: white;"></i></a>
+            <a href=""><i class="bi bi-instagram" style="color: white;"></i></a>
+            <a href=""><i class="bi bi-twitter" style="color: white;"></i></a>
+            <a href=""><i class="bi bi-pinterest" style="color: white;"></i></a>
+          </div>
+          <div id="opciones" class="col align-self-end">
+            {% block masopcionesNav %} {% endblock %}
+            <a href="" class="navbar-brand" style="font-size: 1.1em;"><strong class="anunciar">Anunciar</strong></a>
+  
+          </div>
+        </div>
+
+      </div>
+      <!---fin pre-navbar-->
+      <nav class="navbar navbar-expand-md navbar-light border-2 border-primary" style="background-color: white;">
+          <div class="container-fluid">
+                  <a href="#" class="navbar-brand"><img id="logo-inicio" src="{% static 'images/logo -nuevo.png' %}" alt=""></a>
+                  <button type="button"
+                      class="navbar-toggler"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#MenuNavegacion">
+                          <span class="navbar-toggler-icon"></span>
+                  </button>
+              </div>
+
+        <div id="MenuNavegacion" class="collapse navbar-collapse">
+
+          <ul class="navbar-nav ms-3">
+            <li class="nav-item">
+                          <a class="nav-link active" href="#">Inicio</a>
+                      </li>
+            <li class="nav-item">
+                          <a class="nav-link" href="#">Nuevos</a>
+                      </li>
+
+            <li class="nav-item">
+                   <a class="nav-link" href="#">+Solicitados</a>
+            </li>
+
+            <li class="nav-item">
+                          <a class="nav-link" href="#">+Seguidos</a>
+            </li>
+                      
+                      <li class="nav-item dropdown">
+                          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
+                            Acerca de
+                          </a>
+                          <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">¿Quiénes somos?</a></li>
+                            <li><a class="dropdown-item" href="#">Comunidad BOOM</a></li>
+                            <li><a class="dropdown-item" href="#">Colaboradores</a></li>
+                          </ul>
+
+                          
+                      <li class="nav-item dropdown">
+                        <a class="nav-link" href="#">Ayuda</a>
+                      </li>
+
+                 </li>
+
+          </ul>
+
+        </div>
+      </nav>
+	</div>
+
+  <!--fin inicio-->
+
+  {% block cuerpo %}
+
+  {% endblock %}
+
+  <div class="footer_section layout_padding">
+    <div class="container">
+       <div class="footer_logo"><a href=""><img style="width: 160px;" src="{% static 'images/logo -nuevo.png' %}"></a></div>
+        {% block agregadoFoot %} {% endblock %}
+       <div class="footer_menu">
+          <ul>
+             <li><a href="#">Ayuda</a></li>
+             <li><a href="#">¿Quienes somos?</a></li>
+             <li><a href="#">Comunidad BOOM</a></li>
+             
+             <li><a href="#">Consejos de seguridad</a></li>
+             <li><a href="#">Terminos y condiciones</a></li>
+          </ul>
+       </div>
+       <div class="location_main">Contactános: <a href="#">+51 956 234 147</a></div>
+    </div>
+ </div>
+ <!-- footer section end -->
+ <!-- copyright section start -->
+ <div class="copyright_section">
+    <div class="container">
+       <p class="copyright_text">© 2021 Todos los derechos reservados. Diseñado por <a href="">Equipo 2</a></p>
+    </div>
+ </div>
+     <!-- Javascript files-->
+     <script src="{% static 'js/jquery.min.js' %}"></script>
+     <script src="{% static 'js/popper.min.js' %}"></script>
+     <script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
+     <script src="{% static 'js/jquery-3.0.0.min.js' %}"></script>
+     <script src="{% static 'js/plugin.js' %}"></script>
+     <!-- sidebar -->
+     <script src="{% static 'js/jquery.mCustomScrollbar.concat.min.js' %}"></script>
+     <script src="{% static 'js/custom.js"></script>
+     
+   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
+
+   {% block funciones %}
+
+   {% endblock %}
+</body>
+</html>

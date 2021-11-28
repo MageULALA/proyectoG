@@ -1,84 +1,83 @@
 from django.db import models
+from django.contrib.auth.models import User
+from django.utils import timezone
 
 # Create your models here.
-class Servicio(models.Model):
-    idServicio=models.AutoField(primary_key=True)
-    descripcion=models.CharField(max_length=80)
-    vigencia = models.BooleanField()
+class Perfil(models.Model):
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
+    #rutaimagen=models.ImageField(upload_to="usuarios", null=True, blank=True)
+
+    def __str__(self):
+        return f'Perfil de {self.user.username}'
+
+class Departamento(models.Model):
+    nombre = models.CharField(max_length=50)
+
+    def __str__(self):
+        return self.nombre
+
+class Paquete(models.Model):
+    descripcion = models.CharField(max_length=80)
+    cantidadAnuncios = models.SmallIntegerField(default=1)
+    duracionDias = models.SmallIntegerField(default=6)
+    precio = models.DecimalField(decimal_places=2,max_digits=6)
+    vigencia = models.CharField(max_length=1,default="V", blank=True)
     def __str__(self):
         return self.descripcion
 
-class Foto(models.Model):
-    idFoto=models.AutoField(primary_key=True)
-    ruta=models.ImageField(upload_to="anuncios", null=True) #se crea dentro de media
-    idAnuncio = models.ForeignKey('Anuncio',on_delete=models.DO_NOTHING)
-
 class Tarjeta(models.Model):
-    idTarjeta=models.AutoField(primary_key=True)
-    nombreTarjeta=models.CharField(max_length=50)
+    user = models.ForeignKey(User, on_delete=models.CASCADE, related_name='tarjetasUsuario')
+    nombreTarjeta=models.CharField(max_length=30)
     numeroTarjeta=models.CharField(max_length=19)
     fechaExpiracion=models.DateField()
     cvc=models.CharField(max_length=4)
-    idUsuario= models.ForeignKey('Usuario',on_delete=models.DO_NOTHING)
     def __str__(self):
         return self.nombreTarjeta
 
-class Usuario(models.Model):
-    idUsuario = models.AutoField(primary_key=True)
-    nombres = models.CharField(max_length=50)
-    contraseña = models.CharField(max_length=20)
-    cuenta = models.EmailField(max_length=200,unique=True)
-    telefono = models.CharField(max_length=13)
-    descripcionUsuario= models.CharField(max_length=200,null=True)
-    ruta_foto= models.ImageField(upload_to="usuarios", null=True) #se crea dentro de media
-    def __str__(self):
-        return self.nombres
-class Anuncio(models.Model):
-    idAnuncio = models.AutoField(primary_key=True)
-    titulo = models.CharField(max_length=150)
-    descripcion=models.CharField(max_length=255)
-    telefono=models.CharField(max_length=13)
-    departamento = models.CharField(max_length=30)
-    direccion = models.CharField(max_length=100)
-    idServicio = models.ForeignKey('Servicio',on_delete=models.DO_NOTHING)
-    idUsuario = models.ForeignKey('Usuario',on_delete=models.DO_NOTHING)
-    idLicencia = models.ForeignKey('Licencia',on_delete=models.DO_NOTHING)
-    vigencia = models.BooleanField()
-    permitido = models.BooleanField()
+class Venta(models.Model):
+    tarjeta=models.ForeignKey('Tarjeta',on_delete=models.DO_NOTHING, related_name='ventasTarjeta')
+    fecha= models.DateTimeField(default=timezone.now)
+    total = models.DecimalField(decimal_places=2,max_digits=8) 
 
-class Seguidor(models.Model):
-    id = models.AutoField(primary_key=True)
-    idUsuario = models.ForeignKey('Usuario',on_delete=models.DO_NOTHING, related_name='usuarioPrincipal')
-    idUsuarioSeguidor=models.ForeignKey('Usuario',on_delete=models.DO_NOTHING, related_name='usuarioSeguidor')
+class Licencia(models.Model):
+    paquete = models.ForeignKey('Paquete',on_delete=models.DO_NOTHING, related_name='licenciasPaquete')
+    venta = models.ForeignKey('Venta',on_delete=models.DO_NOTHING, related_name='licenciasVenta')
+    fecha_inicio=models.DateField(null=True)
+    fecha_fin=models.DateField(null=True)
+    precio = models.DecimalField(decimal_places=2,max_digits=6, null=True, blank=True)
+    estado = models.CharField(max_length=1,default="A",null=True, blank=True) #activo, programado, expirado
 
-class Favorito(models.Model):
-    id = models.AutoField(primary_key=True)
-    idUsuario = models.ForeignKey('Usuario',on_delete=models.DO_NOTHING)
-    idAnuncio = models.ForeignKey('Anuncio',on_delete=models.DO_NOTHING)
-    fecha_guardado= models.DateField()
-
-class Paquete(models.Model):
-    idPaquete = models.AutoField(primary_key=True)
-    descripcion = models.CharField(max_length=80)
-    cantidadAnuncios = models.SmallIntegerField(default=1)
-    duracionDias = models.SmallIntegerField()
-    precio = models.DecimalField(decimal_places=2,max_digits=6)
-    vigencia = models.BooleanField()
     def __str__(self):
         return self.descripcion
 
-class Venta(models.Model):
-    idVenta=models.AutoField(primary_key=True)
-    fecha= models.DateField()
-    hora= models.TimeField()
-    descuento = models.DecimalField(decimal_places=2,max_digits=3)
-    total = models.DecimalField(decimal_places=2,max_digits=6) #aplicadpo el dscto.
-    idTarjeta=models.ForeignKey('Tarjeta',on_delete=models.DO_NOTHING)
+class Servicio(models.Model):
+    nombre=models.CharField(max_length=80)
+    vigencia = models.CharField(max_length=1,default="V", blank=True)
+    def __str__(self):
+        return self.nombre
+    
+    class Meta:
+        ordering = ['-nombre']
 
-class Licencia(models.Model):
-    idLicencia=models.AutoField(primary_key=True)
-    idPaquete = models.ForeignKey('Paquete',on_delete=models.DO_NOTHING)
-    idVenta = models.ForeignKey('Venta',on_delete=models.DO_NOTHING)
-    fecha_inicio=models.DateField(null=True)
-    fecha_fin=models.DateField(null=True)
-    estado = models.BooleanField() #activo, programado, expirado
+class Anuncio(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE, related_name='anunciosUsuario')
+    servicio = models.ForeignKey('Servicio',on_delete=models.DO_NOTHING, related_name='anunciosServicio')
+    departamento = models.ForeignKey('Departamento', on_delete=models.DO_NOTHING, related_name='anunciosDepartamento')
+    licencia =  models.ForeignKey('Licencia', on_delete=models.DO_NOTHING, related_name='anunciosLicencia', null=True, blank=True)
+    timestamp = models.DateTimeField(default=timezone.now)
+    titulo = models.CharField(max_length=50)
+    descripcion = models.TextField()
+    referencia = models.CharField(max_length=50)
+    rutaimagen=models.ImageField(upload_to="anuncios")
+    estado = models.CharField(max_length=1,default="A",null=True, blank=True) #activo, inactivo
+
+    class Meta:
+        ordering = ['-timestamp']
+
+    def __str__(self):
+        return f'{self.user.username}: {self.descripcion}'
+
+
+
+
+

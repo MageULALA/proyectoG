@@ -17,18 +17,13 @@ from django.contrib import admin
 from django.urls import path
 from django.conf import settings
 from django.conf.urls.static import static
-from proyecto.vista import uso_plantilla, uso_login, uso_indexUsuario
-
-
-
+from . import vista
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('indexGeneral/', uso_plantilla),
-    path('login/', uso_login),
-    path('indexUsuario/', uso_indexUsuario),
-   # path('listarServicios/', listarServicios)
-
+    path('inicio/', vista.inicio, name='inicio'),
+    path('perfil/', vista.perfil, name='perfil'),
+    path('registro/', vista.registro, name='registro'),
 ]
 
 if settings.DEBUG:

@@ -314,7 +314,7 @@ button {
 }
 
 .sidenav a:hover {
-    color: #f26522;
+    color: #f55d17;
 }
 
 .sidenav .closebtn {
@@ -584,7 +584,7 @@ fin aqui
 }
 
 .login_menu li a:hover {
-    color: #f26522;
+    color: #f55c15;
 }
 
 .padding_10 {
@@ -608,7 +608,7 @@ fin aqui
 }
 
 a:hover {
-    color: #f26522;
+    color: #f65a12;
     text-decoration: underline;
 }
 
@@ -753,7 +753,7 @@ input.mail_bt::placeholder {
     width: 30%;
     float: right;
     font-size: 16px;
-    color: #f26522;
+    color: #f55d16;
     background-color: transparent;
     padding: 20px 0px 5px 0px;
     border-radius: 30px;
