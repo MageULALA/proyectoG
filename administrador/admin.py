@@ -1,5 +1,5 @@
 from django.contrib import admin
-from administrador.models import Servicio, Tarjeta, Perfil, Anuncio, Paquete, Venta, Licencia
+from administrador.models import Servicio,Departamento, Tarjeta, Perfil, Anuncio, Paquete, Venta, Licencia
 # Register your models here.
 
 class ServicioAdmin(admin.ModelAdmin):
@@ -17,7 +17,7 @@ class ServicioAdmin(admin.ModelAdmin):
 class PaqueteAdmin(admin.ModelAdmin):
     list_display=("id","descripcion","cantidadAnuncios","duracionDias","precio")
     search_fields=("paquete_id","descripcion")
-    list_filter=("duracionDias","precio","cantidadAnuncios","vigencia",)
+    list_filter=("duracionDias","cantidadAnuncios","vigencia",)
     list_editable = ("precio",)
 
 
@@ -38,11 +38,15 @@ class TarjetaAdmin(admin.ModelAdmin):
 class AnuncioAdmin(admin.ModelAdmin):
     list_display=("id","titulo","departamento_id","servicio_id","user_id","licencia_id" )
     search_fields=("id","titulo","departamento_id","servicio_id","usuario_id")
-    list_filter=("departamento_id","estado",)
+    list_filter=("estado","departamento_id",)
 
+class DepartamentoAdmin(admin.ModelAdmin):
+    list_display=("id","nombre")
+    search_fields=("id","nombre")
 
 admin.site.register(Servicio, ServicioAdmin)
 admin.site.register(Tarjeta, TarjetaAdmin)
+admin.site.register(Departamento, DepartamentoAdmin)
 admin.site.register(Perfil)
 admin.site.register(Anuncio, AnuncioAdmin)
 #admin.site.register(Seguidor)

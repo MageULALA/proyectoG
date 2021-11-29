@@ -5,7 +5,7 @@ from django.utils import timezone
 # Create your models here.
 class Perfil(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
-    #rutaimagen=models.ImageField(upload_to="usuarios", null=True, blank=True)
+    rutaimagen=models.ImageField(upload_to="usuarios", default="usuarios/fotonn.png")
 
     def __str__(self):
         return f'Perfil de {self.user.username}'
@@ -28,7 +28,7 @@ class Paquete(models.Model):
 class Tarjeta(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE, related_name='tarjetasUsuario')
     nombreTarjeta=models.CharField(max_length=30)
-    numeroTarjeta=models.CharField(max_length=19)
+    numeroTarjeta=models.CharField(max_length=16)
     fechaExpiracion=models.DateField()
     cvc=models.CharField(max_length=4)
     def __str__(self):
@@ -66,9 +66,10 @@ class Anuncio(models.Model):
     licencia =  models.ForeignKey('Licencia', on_delete=models.DO_NOTHING, related_name='anunciosLicencia', null=True, blank=True)
     timestamp = models.DateTimeField(default=timezone.now)
     titulo = models.CharField(max_length=50)
+    telefono = models.CharField(max_length=13, null=True)
     descripcion = models.TextField()
-    referencia = models.CharField(max_length=50)
-    rutaimagen=models.ImageField(upload_to="anuncios")
+    referencia = models.CharField(max_length=50, null=True)
+    rutaimagen=models.ImageField(upload_to="anuncios", default="static/fotonn.png")
     estado = models.CharField(max_length=1,default="A",null=True, blank=True) #activo, inactivo
 
     class Meta:
