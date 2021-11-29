@@ -31,6 +31,7 @@ urlpatterns = [
     path('logout/', LogoutView.as_view(template_name='indexGeneral.html'), name='logout'),
     path('busqueda/', vista.busqueda, name='busqueda'),
     path('perfil/', vista.miperfil, name='miperfil'),
+    path('anunciar/', vista.anunciar, name='anunciar'),
     
 
 ]

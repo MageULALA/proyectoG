@@ -69,7 +69,7 @@ class Anuncio(models.Model):
     telefono = models.CharField(max_length=13, null=True)
     descripcion = models.TextField()
     referencia = models.CharField(max_length=50, null=True)
-    rutaimagen=models.ImageField(upload_to="anuncios", default="static/fotonn.png")
+    rutaimagen=models.ImageField(upload_to="anuncios", null=True, blank=True)
     estado = models.CharField(max_length=1,default="A",null=True, blank=True) #activo, inactivo
 
     class Meta:

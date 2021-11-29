@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block estilos %}
+<link rel="stylesheet" href="{% static 'css/formulario.css' %}">
+
+
+{% endblock %}
+
+{% block titulo %}Bienvenido de nuevo | BOOM {% endblock %}
+
+{% block masopcionesNav %}
+
+{% endblock %}
+
+{% if messages %}
+  {% for message in messages %}
+    <div class="mensaje">
+      {{ message.tags }}
+   </div>
+  {% endfor%}
+{% endif %}
+
+{% block cuerpo %} 
+<div id="cont">
+  <form action="" method="post" class="form">
+    {% csrf_token %}
+    {{ form.as_p }}
+
+  <input  type="submit" name="submit" value="Publicar" id="boton" >
+</form>
+</div>
+{% endblock %}
+
+
+
+{% block agregadoFoot %} 
+{% endblock %}
+
+{% block funciones %}
+
+{% endblock %}
+
+
