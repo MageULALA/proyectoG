@@ -9,24 +9,23 @@
 {% block titulo %}Registrate y empieza ahora| BOOM {% endblock %}
 
 {% block masopcionesNav %}
-<a href="{% url 'inicio'  %}" id="registrarme" class="navbar-brand" style="font-size: 1.1em;">Registrarme</a>
-<a href="" id="ingresar" class="navbar-brand" style="font-size: 1.1em;">Ingresar</a>
+
 {% endblock %}
 
 {% if messages %}
   {% for message in messages %}
     <div class="mensaje"><p>{{ message.tags }}</p></div>
-    {{ message }}
+
   {% endfor%}
 {% endif %}
 
 {% block cuerpo %} 
 <div id="cont">
-  <form action="" method="post" class="form" style="content: center;">
+  <form action="" method="post" class="form">
     {% csrf_token %}
     {{ form.as_p }}
 
-  <input style="padding: 0.3em;  border: solid #a0ce4e 2px; background: white; margin-left: 25%;" type="submit" name="submit" id="boton" >
+  <input  type="submit" name="submit" value="Registrarme" id="boton" >
 </form>
 </div>
 {% endblock %}

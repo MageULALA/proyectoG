@@ -1,9 +1,48 @@
-#boton{
-    color: coral !important;
-}
-
 .cont{
-    background: coral;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding-left: 3em;
+
+}
+
+.form{
+     margin-top: 3%;
+    margin-left: 40%;
+
+     justify-content: center;
+     align-items: center;
+     margin-bottom: 8%;
+    width: auto;
+    border-left: 2px solid #3f3d59;
 }
 
 
+
+p{
+    
+    display: inline-flexbox;
+}
+
+input {
+    margin: 10px;
+    width: 200px;
+}
+
+
+
+#boton{
+    padding: 0.5em;  
+    border: solid #a0ce4e 2px; 
+    background: white; 
+    margin-left: 12%;
+    font-weight: bolder;
+    padding-left: 1em;
+    padding-right: 1em;
+}
+
+#boton:hover{
+    background: #a0ce4e;
+    color: white;
+}

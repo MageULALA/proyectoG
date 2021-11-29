@@ -1,0 +1,38 @@
+#accordionFlushExample:focus{
+    color: #ffff00;
+}
+
+.formulario-buscador2{
+    align-items: center;
+    justify-content: end;
+    display: flex;
+    width: 100%;
+    padding: 1em;
+    margin-bottom: 1.5em;
+
+}
+
+.boton-buscar2{
+    padding: 0.3em;
+    padding-left: 1em;
+    padding-right: 1em;
+    border: solid #a0ce4e 2px;
+    background: none;
+    color: #3f3d59;
+    font-weight: bold;
+}
+
+.boton-buscar2:hover{
+    background: #a0ce4e;
+    color: #3f3d59;
+    font-weight: bold;
+}
+
+#publicado {
+   padding-right: 10px;
+}
+#buscar{
+    margin-left: 18px;
+}
+
+

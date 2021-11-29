@@ -26,9 +26,26 @@
             <a href=""><i class="bi bi-pinterest" style="color: white;"></i></a>
           </div>
           <div id="opciones" class="col align-self-end">
-            {% block masopcionesNav %} {% endblock %}
+            {% if request.user.is_authenticated %}
+              <div class="btn-group dropstart">
+                <button style="border-radius: 50%; margin-right: 5px;background: transparent;" type="button" class="btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                  <i style="color: white;" class="bi bi-person"></i>
+                </button>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="{% url 'perfil'  %}">Mi perfil</a></li>
+                  <li><a class="dropdown-item" href="#">Comprar paquetes</a></li>
+                  <li><a class="dropdown-item" href="{% url 'logout'  %}">Cerar sesión</a></li>
+                </ul>
+              </div>
+
+
+            {% else %}
+            <a href="{% url 'registro'  %}" id="registrarme" class="navbar-brand" style="font-size: 1.1em;">Registrarme</a>
+            <a href="{% url 'login'  %}" id="ingresar" class="navbar-brand" style="font-size: 1.1em;">Ingresar</a>
+            
+            {% endif %}
+
             <a href="" class="navbar-brand" style="font-size: 1.1em;"><strong class="anunciar">Anunciar</strong></a>
-  
           </div>
         </div>
 

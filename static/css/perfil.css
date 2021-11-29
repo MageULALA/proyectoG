@@ -14,13 +14,10 @@ html {
     box-sizing: border-box;
 }
 
-body {
-    color: #404040;
-    font-family: "Arial", Segoe UI, Tahoma, sans-serifl, Helvetica Neue, Helvetica;
-}
+
 
 .perfil-usuario {
-    background: linear-gradient(#fcff37, transparent);
+    background: white;
     color: #333;
 }
 .perfil-usuario .sombra {
