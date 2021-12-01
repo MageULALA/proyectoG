@@ -25,13 +25,14 @@ from . import vista
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('inicio/', vista.inicio, name='inicio'),
-    path('perfil/', vista.perfil, name='perfil'),
     path('registro/', vista.registro, name='registro'),
     path('login/', LoginView.as_view(template_name='login.html'), name='login'),
     path('logout/', LogoutView.as_view(template_name='indexGeneral.html'), name='logout'),
     path('busqueda/', vista.busqueda, name='busqueda'),
-    path('perfil/', vista.miperfil, name='miperfil'),
+    path('perfil/', vista.miperfil, name='perfil'),
     path('anunciar/', vista.anunciar, name='anunciar'),
+    path('verificar/', vista.verificar, name='verificar'),
+    path('verificado/', vista.verificado, name='verificado'),
     
 
 ]

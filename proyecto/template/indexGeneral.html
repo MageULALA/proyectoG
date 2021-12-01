@@ -4,11 +4,15 @@
 
 {% load humanize %}
 
-{% block estilos %} {% endblock %}
+{% block estilos %}
+
+{% endblock %}
+
 {% block titulo %}El mejor en anuncios clasificados| Con Boom anuncia es más fácil{% endblock %}
 
 {% block masopcionesNav %}
 {% endblock %}
+
 
 {% block cuerpo %} 
 <section class="slider">
@@ -52,437 +56,73 @@
       <span class="visually-hidden">Next</span>
     </button>
   </div>
+  <div class="formulario-buscador">
+    <form  action="GET" class="row">
+      <div class="col-auto">
+        <input type="text" class="form-control" id="inputEmail4" placeholder="Escriba palabras clave" >
+      </div>
+  
+      <div class="col-auto">
+        <select id="inputDepartamento" class="form-select">
+          <option selected>Todos los departamentos</option>
+          <option>Lambayeque</option>
+          <option>Junín</option>
+          <option>La Libertad</option>
+  
+  
+        </select>
+      </div>
+  
+  
+      <div class="col-auto">
+        <button type="submit" class="boton-buscar">Buscar</button>
+      </div>
+  
+    </form>
+  </div>
 </section>
 
-<div class="formulario-buscador">
-  <form  action="GET" class="row">
-    <div class="col-auto">
-      <input type="text" class="form-control" id="inputEmail4" placeholder="Escriba palabras clave" >
-    </div>
 
-    <div class="col-auto">
-      <select id="inputDepartamento" class="form-select">
-        <option selected>Todos los departamentos</option>
-        <option>Lambayeque</option>
-        <option>Junín</option>
-        <option>La Libertad</option>
-
-
-      </select>
-    </div>
-
-
-    <div class="col-auto">
-      <button type="submit" class="boton-buscar">Buscar</button>
-    </div>
-
-  </form>
-</div>
 
 
 <!-- fashion section start -->
-  <div class="fashion_section">
-  <div id="main_slider" class="carousel slide" data-ride="carousel">
-    <h1 class="fashion_taital"><a href="">NUEVOS</a></h1>
-    <div class="carousel-inner">
-      <div class="carousel-item active">
-          <div class="container">
-            <div class="fashion_section_2">
-                <div class="row">
-                  <!--{% for anuncio in anuncios %}-->
-                  <div class="col-lg-4 col-sm-4">
-                      <div class="box_main">
-                        <h4 class="shirt_text">Título del servicio</h4>
-                        <p id="price_text" class="price_text"><i class="bi bi-geo-alt-fill"></i>Departamento</p>
-                        <div class="buy_bt"><a href="#">holaa</a></div>
-                        <div class="tshirt_img"><img src=""></div>
-                        <div class="btn_main">
-                            <div class="buy_bt"><a href="#">VER MAS</a></div>
-                            <div class="seemore_bt"><a href="#"><i style="width: 30px;color:red;">Favorito</i></a></div>
-                        </div>
-                      </div>
-                  </div>
-                  <!--{% endfor %}-->
-                  <div class="col-lg-4 col-sm-4">
-                      <div class="box_main">
-                        <h4 class="shirt_text">Man -shirt</h4>
-                        <p class="price_text">Price <span style="color: #262626;">$ 30</span></p>
-                        <div class="tshirt_img"><img src="{% static 'images/dress-shirt-img.png' %}"></div>
-                        <div class="btn_main">
-                            <div class="buy_bt"><a href="#">Buy Now</a></div>
-                            <div class="seemore_bt"><a href="#">See More</a></div>
-                        </div>
-                      </div>
-                  </div>
-                  <div class="col-lg-4 col-sm-4">
-                      <div class="box_main">
-                        <h4 class="shirt_text">Woman Scart</h4>
-                        <p class="price_text">Price <span style="color: #262626;">$ 30</span></p>
-                        <div class="tshirt_img"><img src="images/women-clothes-img.png' %}"></div>
-                        <div class="btn_main">
 
-                            <div class="seemore_bt"><a href="#">See More</a></div>
-                        </div>
-                      </div>
-                  </div>
-                </div>
-            </div>
+<div class="container testimonial-group">
+  <div class="row text-center">
+    <div style="padding: 0px; border-radius: 10px;" class="col-3">
+
+      <div class="card" style="align-items: center;">
+        <img  class="card-img-top" style="width: 280px; margin: 0px;" src="{% static 'images/photo-studio-ga73bb9bee_1920.jpg' %}" alt="Card image cap">
+        <div class="card-body">
+          <div style="font-size: 12px; color: black;">
+            mjunkojuygmjunkojuygmjunkojuygmjunkojuygmjunkojuyg hfhfhhf
           </div>
-      </div>
-      <div class="carousel-item">
-          <div class="container">
-            <div class="fashion_section_2">
-                <div class="row">
-                  <div class="col-lg-4 col-sm-4">
-                      <div class="box_main">
-                        <h4 class="shirt_text">Man T -shirt</h4>
-                       
-                        <div class="tshirt_img"><img src="{% static 'images/tshirt-img.png' %}"></div>
-                        <div class="btn_main">
-                            <div class="buy_bt"><a href="#">Buy Now</a></div>
-                            <div class="seemore_bt"><a href="#">See More</a></div>
-                        </div>
-                      </div>
-                  </div>
-                  <div class="col-lg-4 col-sm-4">
-                      <div class="box_main">
-                        <h4 class="shirt_text">Man -shirt</h4>
-
-                        <div class="tshirt_img"><img src="images/dress-shirt-img.png"></div>
-                        <div class="btn_main">
-                            <div class="buy_bt"><a href="#">Buy Now</a></div>
-                            <div class="seemore_bt"><a href="#">See More</a></div>
-                        </div>
-                      </div>
-                  </div>
-
-                  <div class="col-lg-4 col-sm-4">
-                      <div class="box_main">
-                        <h4 class="shirt_text">Woman Scart</h4>
-                        <p class="price_text">Price <span style="color: #262626;">$ 30</span></p>
-                        <div class="tshirt_img"><img src="images/women-clothes-img.png"></div>
-                        <div class="btn_main">
-                            <div class="buy_bt"><a href="#">Buy Now</a></div>
-                            <div class="seemore_bt"><a href="#">See More</a></div>
-                        </div>
-                      </div>
-                  </div>
-                </div>
-            </div>
-          </div>
-      </div>
-      <div class="carousel-item">
-          <div class="container">
-
-            <div class="fashion_section_2">
-                <div class="row">
-                  <div class="col-lg-4 col-sm-4">
-                      <div class="box_main">
-                        <h4 class="shirt_text">Man T -shirt</h4>
-                        <p class="price_text">Price <span style="color: #262626;">$ 30</span></p>
-                        <div class="tshirt_img"><img src="images/tshirt-img.png"></div>
-                        <div class="btn_main">
-                            <div class="buy_bt"><a href="#">Buy Now</a></div>
-                            <div class="seemore_bt"><a href="#">See More</a></div>
-                        </div>
-                      </div>
-                  </div>
-                  <div class="col-lg-4 col-sm-4">
-                      <div class="box_main">
-                        <h4 class="shirt_text">Man -shirt</h4>
-                        <p class="price_text">Price <span style="color: #262626;">$ 30</span></p>
-                        <div class="tshirt_img"><img src="images/dress-shirt-img.png"></div>
-                        <div class="btn_main">
-                            <div class="buy_bt"><a href="#">Buy Now</a></div>
-                            <div class="seemore_bt"><a href="#">See More</a></div>
-                        </div>
-                      </div>
-                  </div>
-
-                  <div class="col-lg-4 col-sm-4">
-                    <div class="box_main">
-                      <h4 class="shirt_text">Man -shirt</h4>
-                      <p class="price_text">Price <span style="color: #262626;">$ 30</span></p>
-                      <div class="tshirt_img"><img src="images/dress-shirt-img.png"></div>
-                      <div class="btn_main">
-                          <div class="buy_bt"><a href="#">Buy Now</a></div>
-                          <div class="seemore_bt"><a href="#">See More</a></div>
-                      </div>
-                    </div>
-                </div>
-
-                </div>
-            </div>
-          </div>
-      </div>
-    </div>
-    <a class="carousel-control-prev" href="#main_slider" role="button" data-slide="prev">
-      <i class="bi bi-caret-left-fill"></i>
-    </a>
-    <a class="carousel-control-next" href="#main_slider" role="button" data-slide="next">
-      <i class="bi bi-caret-right-fill"></i>
-    </a>
-
-  </div>
-
-</div>
-
-      <!---fin section nuevos-->
-
-      <div class="fashion_section">
-        <div id="main_slider" class="carousel slide" data-ride="carousel">
-          <h1 class="fashion_taital"><a href=""><i class="bi bi-plus-lg"></i>SOLICITADOS</a></h1>
-          <div class="carousel-inner">
-            <div class="carousel-item active">
-                <div class="container">
-                  <div class="fashion_section_2">
-                      <div class="row">
-                        <div class="col-lg-4 col-sm-4">
-                            <div class="box_main">
-                              <h4 class="shirt_text">Título del servicio</h4>
-                              <p id="price_text" class="price_text"><i class="bi bi-geo-alt-fill-lg"></i> Departamento</p>
-                              <div class="tshirt_img"><img src="images/tshirt-img.png"></div>
-                              <div class="btn_main">
-                                  <div class="buy_bt"><a href="#">Buy Now</a></div>
-                                  <div class="seemore_bt"><a href="#"><i class="bi bi-bookmark-star-fill" style="width: 30px;"></i></a></div>
-                              </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-4 col-sm-4">
-                            <div class="box_main">
-                              <h4 class="shirt_text">Man -shirt</h4>
-                              <p class="price_text">Price <span style="color: #262626;">$ 30</span></p>
-                              <div class="tshirt_img"><img src="images/dress-shirt-img.png"></div>
-                              <div class="btn_main">
-                                  <div class="buy_bt"><a href="#">Buy Now</a></div>
-                                  <div class="seemore_bt"><a href="#">See More</a></div>
-                              </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-4 col-sm-4">
-                            <div class="box_main">
-                              <h4 class="shirt_text">Woman Scart</h4>
-                              <p class="price_text">Price <span style="color: #262626;">$ 30</span></p>
-                              <div class="tshirt_img"><img src="images/women-clothes-img.png"></div>
-                              <div class="btn_main">
-    
-                                  <div class="seemore_bt"><a href="#">See More</a></div>
-                              </div>
-                            </div>
-                        </div>
-                      </div>
-                  </div>
-                </div>
-            </div>
-            <div class="carousel-item">
-                <div class="container">
-     
-                  <div class="fashion_section_2">
-                      <div class="row">
-                        <div class="col-lg-4 col-sm-4">
-                            <div class="box_main">
-                              <h4 class="shirt_text">Man T -shirt</h4>
-                             
-                              <div class="tshirt_img"><img src="images/tshirt-img.png"></div>
-                              <div class="btn_main">
-                                  <div class="buy_bt"><a href="#">Buy Now</a></div>
-                                  <div class="seemore_bt"><a href="#">See More</a></div>
-                              </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-4 col-sm-4">
-                            <div class="box_main">
-                              <h4 class="shirt_text">Man -shirt</h4>
-    
-                              <div class="tshirt_img"><img src="images/dress-shirt-img.png"></div>
-                              <div class="btn_main">
-                                  <div class="buy_bt"><a href="#">Buy Now</a></div>
-                                  <div class="seemore_bt"><a href="#">See More</a></div>
-                              </div>
-                            </div>
-                        </div>
-    
-                        <div class="col-lg-4 col-sm-4">
-                            <div class="box_main">
-                              <h4 class="shirt_text">Woman Scart</h4>
-                              <p class="price_text">Price <span style="color: #262626;">$ 30</span></p>
-                              <div class="tshirt_img"><img src="images/women-clothes-img.png"></div>
-                              <div class="btn_main">
-                                  <div class="buy_bt"><a href="#">Buy Now</a></div>
-                                  <div class="seemore_bt"><a href="#">See More</a></div>
-                              </div>
-                            </div>
-                        </div>
-                      </div>
-                  </div>
-                </div>
-            </div>
-            <div class="carousel-item">
-                <div class="container">
-    
-                  <div class="fashion_section_2">
-                      <div class="row">
-                        <div class="col-lg-4 col-sm-4">
-                            <div class="box_main">
-                              <h4 class="shirt_text">Man T -shirt</h4>
-                              <p class="price_text">Price <span style="color: #262626;">$ 30</span></p>
-                              <div class="tshirt_img"><img src="images/tshirt-img.png"></div>
-                              <div class="btn_main">
-                                  <div class="buy_bt"><a href="#">Buy Now</a></div>
-                                  <div class="seemore_bt"><a href="#">See More</a></div>
-                              </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-4 col-sm-4">
-                            <div class="box_main">
-                              <h4 class="shirt_text">Man -shirt</h4>
-                              <p class="price_text">Price <span style="color: #262626;">$ 30</span></p>
-                              <div class="tshirt_img"><img src="images/dress-shirt-img.png"></div>
-                              <div class="btn_main">
-                                  <div class="buy_bt"><a href="#">Buy Now</a></div>
-                                  <div class="seemore_bt"><a href="#">See More</a></div>
-                              </div>
-                            </div>
-                        </div>
-    
-                        <div class="col-lg-4 col-sm-4">
-                          <div class="box_main">
-                            <h4 class="shirt_text">Man -shirt</h4>
-                            <p class="price_text">Price <span style="color: #262626;">$ 30</span></p>
-                            <div class="tshirt_img"><img src="images/dress-shirt-img.png"></div>
-                            <div class="btn_main">
-                                <div class="buy_bt"><a href="#">Buy Now</a></div>
-                                <div class="seemore_bt"><a href="#">See More</a></div>
-                            </div>
-                          </div>
-                      </div>
-    
-                      </div>
-                  </div>
-                </div>
-            </div>
-          </div>
-          <a class="carousel-control-prev" href="#main_slider" role="button" data-slide="prev">
-            <i class="bi bi-caret-left-fill"></i>
-          </a>
-          <a class="carousel-control-next" href="#main_slider" role="button" data-slide="next">
-            <i class="bi bi-caret-right-fill"></i>
-          </a>
-    
+          <div><p class="card-text"><small class="text-muted">Lambayeque</small></p></div>
+          <div><p class="card-text"><small class="text-muted">14/05/2019 13:45 </small></p></div>
+            <a style="font-size: 14px;" href="">VER MAS</a>
+            <a style="font-size: 14px;" href="">VER MAS</a> 
         </div>
-    
-            </div>
+      </div>
 
-      <!-- inicio section solicitados, es decir con paquetes -->
-            <!-- fashion section start -->
-            <div class="fashion_section">
-              <div id="main_slider" class="carousel slide" data-ride="carousel">
-                <h1 class="fashion_taital"><a href=""><i class="bi bi-plus-lg"></i>SEGUIDOS</a></h1>
-                <div class="carousel-inner">
-                  <div class="carousel-item active">
-                      <div class="container">
-                        <div class="fashion_section_2">
-                            <div class="row">
-                              <div class="col-lg-4 col-sm-4">
-                                  <div class="box_main">
-                                    <h4 class="shirt_text">Título del servicio</h4>
-                                    <p id="price_text" class="price_text"><i class="bi bi-geo-alt-fill-lg"></i> Departamento</p>
-                                    <div class="tshirt_img"><img src="images/tshirt-img.png"></div>
-                                    <div class="btn_main">
-                                        <div class="buy_bt"><a href="#">Buy Now</a></div>
-                                        <div class="seemore_bt"><a href="#"><i class="bi bi-bookmark-star-fill" style="width: 30px;"></i></a></div>
-                                    </div>
-                                  </div>
-                              </div>
-                              <div class="col-lg-4 col-sm-4">
-                                  <div class="box_main">
-                                    <h4 class="shirt_text">Man -shirt</h4>
-                                    <p class="price_text">Price <span style="color: #262626;">$ 30</span></p>
-                                    <div class="tshirt_img"><img src="images/dress-shirt-img.png"></div>
-                                    <div class="btn_main">
-                                        <div class="buy_bt"><a href="#">Buy Now</a></div>
-                                        <div class="seemore_bt"><a href="#">See More</a></div>
-                                    </div>
-                                  </div>
-                              </div>
-                              <div class="col-lg-4 col-sm-4">
-                                  <div class="box_main">
-                                    <h4 class="shirt_text">Woman Scart</h4>
-                                    <p class="price_text">Price <span style="color: #262626;">$ 30</span></p>
-                                    <div class="tshirt_img"><img src="images/women-clothes-img.png"></div>
-                                    <div class="btn_main">
-          
-                                        <div class="seemore_bt"><a href="#">See More</a></div>
-                                    </div>
-                                  </div>
-                              </div>
-                            </div>
-                        </div>
-                      </div>
-                  </div>
-                  <div class="carousel-item">
-                      <div class="container">
-           
-                        <div class="fashion_section_2">
-                            <div class="row">
-                              <div class="col-lg-4 col-sm-4">
-                                  <div class="box_main">
-                                    <h4 class="shirt_text">Man T -shirt</h4>
-                                   
-                                    <div class="tshirt_img"><img src="images/tshirt-img.png"></div>
-                                    <div class="btn_main">
-                                        <div class="buy_bt"><a href="#">Buy Now</a></div>
-                                        <div class="seemore_bt"><a href="#">See More</a></div>
-                                    </div>
-                                  </div>
-                              </div>
-                              <div class="col-lg-4 col-sm-4">
-                                  <div class="box_main">
-                                    <h4 class="shirt_text">Man -shirt</h4>
-          
-                                    <div class="tshirt_img"><img src="images/dress-shirt-img.png"></div>
-                                    <div class="btn_main">
-                                        <div class="buy_bt"><a href="#">Buy Now</a></div>
-                                        <div class="seemore_bt"><a href="#">See More</a></div>
-                                    </div>
-                                  </div>
-                              </div>
-          
-                              <div class="col-lg-4 col-sm-4">
-                                  <div class="box_main">
-                                    <h4 class="shirt_text">Woman Scart</h4>
-                                    <p class="price_text">Price <span style="color: #262626;">$ 30</span></p>
-                                    <div class="tshirt_img"><img src="images/women-clothes-img.png"></div>
-                                    <div class="btn_main">
-                                        <div class="buy_bt"><a href="#">Buy Now</a></div>
-                                        <div class="seemore_bt"><a href="#">See More</a></div>
-                                    </div>
-                                  </div>
-                              </div>
-                            </div>
-                        </div>
-                      </div>
-                  </div>
-
-                </div>
-                <a class="carousel-control-prev" href="#main_slider" role="button" data-slide="prev">
-                  <i class="bi bi-caret-left-fill"></i>
-                </a>
-                <a class="carousel-control-next" href="#main_slider" role="button" data-slide="next">
-                  <i class="bi bi-caret-right-fill"></i>
-                </a>
-          
-              </div>
+    </div><!--
+ --><div style="padding: 0px;" class="col-3">2</div><!--
+ --><div class="col-3">3</div><!--
+ --><div class="col-3">4</div><!--
+ --><div class="col-3">5</div><!--
+ --><div class="col-3">6</div><!--
+ --><div class="col-3">7</div><!--
+ --><div class="col-3">8</div><!--
+ --><div class="col-3">9</div>
+  </div>
 </div>
-          
 
-      <!---FIn section solicitados-->        
+ <!---FIn section solicitados-->        
 
 <div class="contenedorBotones">
-<div class="row align-items-center justify-content-center ">
-      <h1 class="masanuncios"><a href="">VER MÁS PUBLICACIONES</a></h1>
-      <h6>Categorías populares</h6>
-  </div>
+  <div class="row align-items-center justify-content-center ">
+        <h1 class="masanuncios"><a href="">VER MÁS PUBLICACIONES</a></h1>
+        <h6>Categorías populares</h6>
+    </div>
 
   <div class="row align-items-center justify-content-center ">     
         <div class="col-auto">
@@ -546,7 +186,7 @@
     </div>
 
 
-</div>
+  </div>
 
 </div>
 {% endblock %}
@@ -557,6 +197,9 @@
   <input type="text" class="mail_bt" placeholder="Ingresa tu email" name="Your Email">
   <span class="subscribe_bt" id="basic-addon2"><a href="#">REGISTRARME</a></span>
 </div>
+
 {% endblock %}
 
+{% block funciones %}
 
+{% endblock %}

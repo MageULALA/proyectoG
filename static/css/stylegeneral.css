@@ -146,3 +146,40 @@ h6{
 .masanuncios{
     font-size: 30px;
 }
+
+
+  .success {
+    background: #43DC7E;
+    color: white;
+  }
+  .error {
+    background: #AB3444;
+    color: white;
+    margin-bottom: 20px;
+  }
+
+  .anunciar {
+    padding: 0.2em;
+    border: solid #a0ce4e 2px;
+}
+
+.anunciar:hover {
+    background:  #a0ce4e;
+}
+
+/* The heart of the matter */
+
+.testimonial-group > .row {
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+  .testimonial-group > .row > .col-3 {
+    display: inline-block;
+  }
+  
+  /* Decorations */
+  .col-3 { color: #fff; font-size: 48px; padding-bottom: 20px; padding-top: 18px; }
+  .col-3:nth-child(3n+1) { background: #c69; }
+  .col-3:nth-child(3n+2) { background: #9c6; }
+  .col-3:nth-child(3n+3) { background: #69c; }

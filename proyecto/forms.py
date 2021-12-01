@@ -23,7 +23,7 @@ class AnuncioForm(forms.ModelForm):
     telefono = forms.CharField(label="Telefono", required=True)
     descripcion = forms.CharField(label="", widget=forms.Textarea(attrs={'rows':2, 'placeholder': '¿De qué trata el anuncio?'}), required=True)
     referencia = forms.CharField(label="Referencia", required=True)
-    rutaimagen = forms.ImageField(label="Foto", required=True)
+    rutaimagen = forms.ImageField(label="Foto", required=False)
     servicio = forms.ModelChoiceField(label="Tipo servicio", queryset=Servicio.objects.all(),  required=True)
     departamento = forms.ModelChoiceField(label="Departamento", queryset=Departamento.objects.all(),  required=True)
         

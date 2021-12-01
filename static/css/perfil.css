@@ -50,8 +50,9 @@ html {
     background-position: center;
     background-repeat: no-repeat;
     position: relative;
-    height: 20rem;
-    margin-bottom: .5rem;
+    background: #a0ce4e;
+    height: 12rem;
+    margin-bottom: .2rem;
 }
 .perfil-usuario .avatar-perfil {
     display: block;
@@ -210,5 +211,10 @@ html {
     }
     .perfil-usuario .icono-perfil {
         display: inline-block;
+    }
+    .perfil-usuario .lista-perfil {
+        display: block;
+        color: #3f3d59;
+        font-weight: bold;
     }
 }

@@ -12,14 +12,13 @@
 
 {% endblock %}
 
-{% if messages %}
-  {% for message in messages %}
-    <div class="mensaje"><p>{{ message.tags }}</p></div>
-
-  {% endfor%}
-{% endif %}
 
 {% block cuerpo %} 
+<br>
+<h5 style="color:WHITE ;font-weight: bold;
+-webkit-text-stroke: 1.5px rgb(29, 29, 29);    align-items: center;
+justify-content: center; text-align: center;">¡REGISTRATE, ES GRATIS!</h5>
+
 <div id="cont">
   <form action="" method="post" class="form">
     {% csrf_token %}

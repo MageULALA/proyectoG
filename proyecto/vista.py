@@ -12,7 +12,10 @@ from .forms import UserRegistroForm, AnuncioForm
 def inicio(request):
     return render(request, 'indexGeneral.html')
 
-def perfil(request):
+def busqueda(request):
+    return render(request, 'busqueda.html')
+
+def miperfil(request):
     return render(request, 'PerfilUsuario.html')
 
 def registro(request):
@@ -25,26 +28,20 @@ def registro(request):
             new_user = authenticate(username=form.cleaned_data['username'], password=form.cleaned_data['password1'],)
             login(request, new_user)
             return redirect('inicio')
-    else: 
-        form = UserRegistroForm()
-        messages.success(request, f'Usuario no registrado')
-
+        else:
+            messages.success(request, f'Usuario no registrado')
+    
+    form = UserRegistroForm()
     context = { 'form' : form }
     return render(request, 'registrarme.html', context)
-
-def busqueda(request):
-    return render(request, 'busqueda.html')
-
-def miperfil(request):
-    return render(request, 'PerfilUsuaio.html')
 
 def anunciar(request):
     current_user = get_object_or_404(User, pk=request.user.pk)
     if request.method == 'POST':
-        form = AnuncioForm(request.POST)
+        form = AnuncioForm(request.POST, request.FILES)
         if form.is_valid():
-            #post = form.save(commit=False)
-            form.user = current_user
+            post = form.save(commit=False)
+            post.user = current_user
             form.save()
             messages.success(request, 'Publicado')
             return redirect('inicio')
@@ -54,8 +51,13 @@ def anunciar(request):
 
     return render(request, 'anunciar.html', { 'form' : form })
 
+#def enviarToken
 
+def verificar(request):
+    return render(request, 'verificarCorreo.html')
 
+def verificado(request):
+    return render(request, 'verificado.html')
 
 
 
