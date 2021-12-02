@@ -9,7 +9,7 @@
 
 .form{
      margin-top: 3%;
-    margin-left: 38%;
+    margin-left: 20%;
 
      justify-content: center;
      align-items: center;
@@ -20,13 +20,12 @@
 
 .formu{
     margin-top: 3%;
-   margin-left: 38%;
+   margin-left: 0%;
 
     justify-content: center;
     align-items: center;
     margin-bottom: 8%;
    width: auto;
-   border-left: 2px solid #3f3d59;
 }
 
 .mensaje{

@@ -1,5 +1,6 @@
 from django import forms
 from django.contrib.auth.models import User
+from django.forms.forms import Form
 from django.http import HttpResponse
 from django.template import Template
 from django.shortcuts import get_object_or_404, redirect, render
@@ -10,6 +11,7 @@ from administrador.models import Perfil
 from .forms import UserRegistroForm, AnuncioForm
 from django.conf import settings
 from django.core.mail import send_mail
+from django.template import RequestContext
 
 def inicio(request):
     return render(request, 'indexGeneral.html')
@@ -81,7 +83,7 @@ def verificado(request, auth_token):
     except Exception as e:
         print(e)
 
-def login(request):
+def loginUser(request):
     if request.method == 'POST':
         username = request.POST.get('username')
         password = request.POST.get('password')
@@ -91,13 +93,16 @@ def login(request):
             messages.success(request, 'Datos incorrectos...')
             return redirect('/login')
         else:
-            if new_user.confirmada:
+            objPerfil = Perfil.objects.filter(user = new_user.pk).first()
+            if objPerfil.confirmada:
                 login(request, new_user)
                 return redirect('inicio')
             else:
                 messages.success(request, 'La cuenta no ha sido confirmada.')
+                return render(request, 'login.html', {'username':' ','password': ' '})
 
     else:
-        return redirect('inicio')
+
+        return render(request, 'login.html', {'username':' ','password': ' '})
 
 
