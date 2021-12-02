@@ -8,6 +8,8 @@ from django.contrib.auth.forms import UserCreationForm
 from django.contrib import messages
 from administrador.models import Perfil
 from .forms import UserRegistroForm, AnuncioForm
+from django.conf import settings
+from django.core.mail import send_mail
 
 def inicio(request):
     return render(request, 'indexGeneral.html')
@@ -25,9 +27,11 @@ def registro(request):
             form.save()
             username = form.cleaned_data['username']
             messages.success(request, f'Usuario {username} registrado')
-            new_user = authenticate(username=form.cleaned_data['username'], password=form.cleaned_data['password1'],)
-            login(request, new_user)
-            return redirect('inicio')
+            usuario = User.objects.get(username=username)
+            objPerfil = Perfil.objects.get(user=usuario.pk)            
+            enviar_email_registro(form.cleaned_data['email'] , objPerfil.auth_token)
+            print(str(form.cleaned_data['email']))
+            return redirect('/verificar')
         else:
             messages.success(request, f'Usuario no registrado')
     
@@ -56,8 +60,44 @@ def anunciar(request):
 def verificar(request):
     return render(request, 'verificarCorreo.html')
 
-def verificado(request):
-    return render(request, 'verificado.html')
+def enviar_email_registro(email , auth_token):
+    subject = 'Su cuenta necesita ser verificada'
+    message = f'Hola Boomero, ingresa a este link para confirmar http://localhost:8000/verificar/{auth_token}'
+    email_from = settings.EMAIL_HOST_USER
+    recipient_list = [email]
+    send_mail( subject, message, email_from, recipient_list )
 
+def verificado(request, auth_token):
+    try:
+        objPerfil = Perfil.objects.filter(auth_token = auth_token).first()
+        if objPerfil:
+            objPerfil.confirmada = True
+            objPerfil.save()
+            messages.success(request, 'Cuenta verificada exitosamente')
+            return redirect('/login')
+        else:
+            messages.success(request, f'Confirmación fallida. Registrarse nuevamente...')
+            return redirect('/registro')
+    except Exception as e:
+        print(e)
+
+def login(request):
+    if request.method == 'POST':
+        username = request.POST.get('username')
+        password = request.POST.get('password')
+        new_user = authenticate(username=username, password = password)
+        
+        if new_user is None:
+            messages.success(request, 'Datos incorrectos...')
+            return redirect('/login')
+        else:
+            if new_user.confirmada:
+                login(request, new_user)
+                return redirect('inicio')
+            else:
+                messages.success(request, 'La cuenta no ha sido confirmada.')
+
+    else:
+        return redirect('inicio')
 
 

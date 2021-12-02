@@ -8,7 +8,7 @@ class Perfil(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     rutaimagen = models.ImageField(upload_to="usuarios", default="usuarios/fotonn.png", null=True, blank=True)
     auth_token = models.CharField(null=True, blank=True,max_length=100)
-    confirmada = models.BooleanField(default=True, null=True, blank=True)
+    confirmada = models.BooleanField(default=False, null=True, blank=True)
 
     def __str__(self):
         return f'Perfil de {self.user.username}'

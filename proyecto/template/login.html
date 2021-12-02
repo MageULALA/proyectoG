@@ -4,7 +4,6 @@
 
 {% block estilos %}
 <link rel="stylesheet" href="{% static 'css/formulario.css' %}">
-<link rel="stylesheet" href="{% static 'css/log.css' %}">
 
 {% endblock %}
 
@@ -18,18 +17,25 @@
 
 {% block cuerpo %} 
 <br>
-<h5 style="color:WHITE ;font-weight: bold;
+
+<div style="margin: 50px; margin-top: 3px;" class="row justify-content-md-center">
+  <h5 style="color:WHITE ;font-weight: bold;
 -webkit-text-stroke:  1.5px rgb(29, 29, 29);    align-items: center;
 justify-content: center; text-align: center;">INICIO DE SESIÓN</h5>
+  <div class="col-sm-6">
+    <div style="padding: 5%;padding-top: 1%; border: none;" class="card text-center">
+        
+      <form action="" method="post" class="formu" name='form'>
+        {% csrf_token %}
+        <input class="caja" style="padding: 3px;" type="text" name='username' placeholder="Nombre de usuario"><br>
+        <input class="caja" style="padding: 3px;" type="password" name='password' placeholder="Contraseña"><br>
+        <input style="margin-left: 3%;"  type="submit" name="submit" value="Ingresar" id="boton" >
+      </form>
 
-<div id="cont">
-  <form action="" method="post" class="form">
-    {% csrf_token %}
-    {{ form.as_p }}
-
-  <input  type="submit" name="submit" value="Ingresar" id="boton" >
-</form>
+    </div>
+  </div>
 </div>
+
 {% endblock %}
 
 
