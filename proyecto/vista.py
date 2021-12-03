@@ -8,6 +8,8 @@ from django.contrib.auth import authenticate, forms, login
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib import messages
 from administrador.models import Perfil
+from administrador.models import Paquete
+from .carrito import Carrito
 from .forms import UserRegistroForm, AnuncioForm
 from django.conf import settings
 from django.core.mail import send_mail
@@ -104,5 +106,33 @@ def loginUser(request):
     else:
 
         return render(request, 'login.html', {'username':' ','password': ' '})
+
+#
+def tienda(request):
+    paquetes = Paquete.objects.filter(vigencia="V")
+    return render(request, "tienda.html", {'paquetes':paquetes})
+
+def agregar_paquete(request, paquete_id):
+    carrito = Carrito(request)
+    paquete = Paquete.objects.get(id=paquete_id)
+    carrito.agregar(paquete)
+    return redirect ('tienda/')
+
+def eliminar_paquete(request, paquete_id):
+    carrito = Carrito(request)
+    paquete= Paquete.objects.get(id=paquete_id)
+    carrito.eliminar(paquete)
+    return redirect ('tienda/')
+
+def restar_paquete(request, paquete_id):
+    carrito = Carrito(request)
+    paquete= Paquete.objects.get(id=paquete_id)
+    carrito.restar(paquete)
+    return redirect ('tienda/')
+
+def limpiar_carrito(request):
+    carrito = Carrito(request)
+    carrito.limpiar()
+    return redirect('tienda/')
 
 

@@ -1,0 +1,60 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block estilos %}
+<link rel="stylesheet" href="{% static 'css/estilotienda.css' %}">
+
+{% endblock %}
+
+{% block titulo %}Bienvenido de nuevo | BOOM {% endblock %}
+
+{% block masopcionesNav %}
+
+{% endblock %}
+
+
+
+{% block cuerpo %} 
+<h5 style="color:WHITE ;font-weight: bold;
+-webkit-text-stroke:  1.5px rgb(29, 29, 29);    align-items: center;
+justify-content: center; text-align: center;">TIENDA DE PAQUETES</h5>
+<h6 style="text-align: center;">¡Tus anuncios llegarán a mas personas!</h6>
+<div class="row">
+            <div class="col-6">
+                <div class="row" style="padding: 10px 0;">
+                    <div class="col-12">
+                        <div class="row">
+                            {% for paquete in paquetes %}
+                            <div class="col-4">
+                                <div class="card" style="height: 12rem; width: 15rem; margin: 5px 5px;margin-right: 20px;">
+                                    <div class="card-body">
+                                        <h5 class="card-title">{{paquete.descripcion}} <a href="{% url 'Add' paquete.id %}"><i style="color: red;font-weight: bold;" class="bi bi-cart-check"></i></a></h5>
+                                        <p class="card-text">N° de nauncios: {{paquete.cantidadAnuncios}}</p>
+                                        <p class="card-text">{{paquete.duracionDias}} días</p>
+                                        <p class="card-text"><i class="bi bi-cash"></i> {{paquete.precio}}</p>
+                            
+                                    </div>
+                                </div>
+                            </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div style="margin-left: 10%;" class="col-4">
+                {% include "resumen.html" %}
+            </div>
+</div>
+
+  
+{% endblock %}
+
+
+
+{% block agregadoFoot %} 
+{% endblock %}
+
+{% block funciones %}
+
+{% endblock %}

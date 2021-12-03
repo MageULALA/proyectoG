@@ -28,25 +28,16 @@ class Paquete(models.Model):
     def __str__(self):
         return self.descripcion
 
-class Tarjeta(models.Model):
-    user = models.ForeignKey(User, on_delete=models.CASCADE, related_name='tarjetasUsuario')
-    nombreTarjeta=models.CharField(max_length=30)
-    numeroTarjeta=models.CharField(max_length=16)
-    fechaExpiracion=models.DateField()
-    cvc=models.CharField(max_length=4)
-    def __str__(self):
-        return self.nombreTarjeta
-
 class Venta(models.Model):
-    tarjeta=models.ForeignKey('Tarjeta',on_delete=models.DO_NOTHING, related_name='ventasTarjeta')
     fecha= models.DateTimeField(default=timezone.now)
-    total = models.DecimalField(decimal_places=2,max_digits=8) 
+    total = models.DecimalField(decimal_places=2,max_digits=8)
+    numeroTarjeta=models.CharField(max_length=16, null=True, blank=True)
 
 class Licencia(models.Model):
     paquete = models.ForeignKey('Paquete',on_delete=models.DO_NOTHING, related_name='licenciasPaquete')
     venta = models.ForeignKey('Venta',on_delete=models.DO_NOTHING, related_name='licenciasVenta')
-    fecha_inicio=models.DateField(null=True)
-    fecha_fin=models.DateField(null=True)
+    fecha_inicio=models.DateField(null=True, blank=True)
+    fecha_fin=models.DateField(null=True, blank=True)
     precio = models.DecimalField(decimal_places=2,max_digits=6, null=True, blank=True)
     estado = models.CharField(max_length=1,default="A",null=True, blank=True) #activo, programado, expirado
 

@@ -1,5 +1,5 @@
 from django.contrib import admin
-from administrador.models import Servicio,Departamento, Tarjeta, Perfil, Anuncio, Paquete, Venta, Licencia
+from administrador.models import Servicio,Departamento, Perfil, Anuncio, Paquete, Venta, Licencia
 # Register your models here.
 
 class ServicioAdmin(admin.ModelAdmin):
@@ -22,18 +22,14 @@ class PaqueteAdmin(admin.ModelAdmin):
 
 
 class VentaAdmin(admin.ModelAdmin):
-    list_display=("id","total","tarjeta_id")
-    search_fields=("id","tarjeta_id","fecha")
+    list_display=("id","total")
+    search_fields=("id","fecha")
     list_filter=("fecha",)
 
 class LicenciaAdmin(admin.ModelAdmin):
     list_display=("id","paquete_id","venta_id","estado", "precio")
     search_fields=("idLicencia","idPaquete","idVenta")
     list_filter=("estado","fecha_inicio","fecha_fin",)
-
-class TarjetaAdmin(admin.ModelAdmin):
-    list_display=("id","nombreTarjeta","numeroTarjeta","user_id")
-    search_fields=("id","nombreTarjeta")
 
 class AnuncioAdmin(admin.ModelAdmin):
     list_display=("id","titulo","departamento_id","servicio_id","user_id","licencia_id" )
@@ -45,7 +41,6 @@ class DepartamentoAdmin(admin.ModelAdmin):
     search_fields=("id","nombre")
 
 admin.site.register(Servicio, ServicioAdmin)
-admin.site.register(Tarjeta, TarjetaAdmin)
 admin.site.register(Departamento, DepartamentoAdmin)
 admin.site.register(Perfil)
 admin.site.register(Anuncio, AnuncioAdmin)
