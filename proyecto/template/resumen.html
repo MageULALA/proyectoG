@@ -1,4 +1,4 @@
-
+<div class="row">
 <div class="alert alert-primary" style="background: #bff75e6c; border: none;" role="alert">
     <table class="table table-bordered">
       <thead>
@@ -7,7 +7,6 @@
         </tr>
         <tr>
           <th scope="col">PAQUETE</th>
-          <th scope="col">PRECIO</th>
           <th scope="col">AUMULADO</th>
           <th scope="col">CANTIDAD</th>
         </tr>
@@ -17,8 +16,6 @@
       {% for key, value in request.session.carrito.items %}
         <tr>
           <td>{{value.descripcion}}</td>
-          <td>{{value.precio}}
-          </td>
           <td>{{value.acumulado}}
           </td>
           <td>
@@ -44,8 +41,9 @@
     </div>
     <div class="row text-center">
         <div class="col-6"><a href="{% url 'CLS' %}" style="margin-left: 3%;" id="boton">Limpiar</a></div>
-        <div class="col-6"><a href="#" style="margin-left: 3%;" id="boton">Guardar</a></div>
     </div>
+  </div>
+
 
 
 

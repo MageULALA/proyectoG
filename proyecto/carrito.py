@@ -17,7 +17,6 @@ class Carrito:
             self.carrito[id]={
                 "paquete_id": paquete.id,
                 "descripcion": paquete.descripcion,
-                "precio": paquete.precio,
                 "acumulado": paquete.precio,
                 "cantidad": 1,
             }

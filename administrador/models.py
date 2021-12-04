@@ -29,8 +29,9 @@ class Paquete(models.Model):
         return self.descripcion
 
 class Venta(models.Model):
-    fecha= models.DateTimeField(default=timezone.now)
-    total = models.IntegerField(null=True)
+    user = models.ForeignKey(User, on_delete=models.CASCADE, related_name='ventasUsuario', null=True, blank=True)
+    fecha= models.DateTimeField(default=timezone.now, null=True, blank=True)
+    total = models.IntegerField(null=True, blank=True)
     numeroTarjeta=models.CharField(max_length=16, null=True, blank=True)
 
 class Licencia(models.Model):

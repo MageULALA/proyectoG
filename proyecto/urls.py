@@ -39,6 +39,10 @@ urlpatterns = [
     path('restar/<int:paquete_id>/', vista.restar_paquete, name='Sub'),
     path('limpiar/', vista.limpiar_carrito, name='CLS'),
     path('anunciosPerfil/', vista.anunciosPerfil, name='anunciosPerfil'),
+    path('crearVenta/', vista.crearVenta, name='crearVenta'),
+    path('verAnuncio/<int:anuncio_id>/', vista.verAnuncio, name='verAnuncio'),
+
+
 ]
 
 if settings.DEBUG:

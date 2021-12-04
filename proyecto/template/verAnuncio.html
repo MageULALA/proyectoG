@@ -1,0 +1,181 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block estilos %}
+<link rel="stylesheet" href="{% static 'css/estiloVer.css' %}">
+{% endblock %}
+
+{% block titulo %}Bienvenido de nuevo | BOOM {% endblock %}
+
+{% block masopcionesNav %}
+
+{% endblock %}
+
+
+
+{% block cuerpo %} 
+{% if anuncio %}
+    <div class="container-fluid " style="border: solid black; margin-top: 1%; padding: 10px; width: 80%;">
+
+        <div class="row">
+
+            <div class="col-sm-7">
+
+                <div class="row">
+
+                    <div class="col-12" >
+                        <div class="row">
+                            <img src=" {{anuncio.rutaimagen.url}} " style="width: 40%; margin-left: 30%;">
+                        </div>
+                    </div>
+
+                    <div class="col-12" >
+                        <div class="row">
+
+                            <div class="col-12" >
+                                <h5>Detalles</h5>
+                            </div>
+
+                            <div class="col-12" >
+                                <div class="row">
+                                    <div class="col-3" style="background: #3f3d59; width: 20%; height: 50px;">
+                                        <p>Tipo</p>
+                                    </div>
+
+                                    <div class="col-9">
+                                        <p>{{anuncio.servicio}}</p>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="col-12" >
+
+                        <div class="row">
+
+                            <div class="col-12" >
+                                <b>
+                                    <h5>Descripcion</h5>
+                                </b>
+
+                            </div>
+
+                            <div class="col-12">
+                                <p>{{anuncio.descripcion}}</p>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+            </div>
+
+            <div class="col-sm-5" style="width: 400px;">
+
+                <div class="row">
+
+                    <div class="col-12" >
+
+                        <div class="row">
+
+                            <div class="col-10">
+                                <b>
+                                    <h3 style="color: #3f3d59;"> Servicio de Electricidad y soldador</h3>
+                                </b>
+                            </div>
+
+                            <div class="col-2" >
+
+                                <div class="row">
+
+                                    <div class="col-12">
+                                        <a href="" style="color: #3f3d59;font-weight: bold;">
+                                            Favorito
+                                        </a>
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                        <div class="col-13" >
+                            <p>{{anuncio.departamento}} | {{anuncio.referencia}}</p>
+                        </div>
+
+                    </div>
+
+                    <div class="col-12" style=" margin-top: 2%;">
+                        <div class="row">
+                            <div class="col 12"   >
+                                <h4> Descripción del anunciante </h4>
+
+                            </div>
+                        </div>
+
+                        <div class="row">
+                        
+                            <div class="col-3" style="background: none;">
+
+                                <img src="{{anuncio.user.perfil.rutaimagen.url}}" style="border-radius: 60%; width: 60%; height: 90%;" >
+                                
+                            </div>
+                            <div class="col-9" >
+                                <p>{{anuncio.user.first_name}}</p>
+                                <p> <a href="" style="color: black;font-style: oblique;">@{{anuncio.user}}</a></p>
+                            </div>
+
+                        </div>
+                        <div class="row">
+
+                            <div class="col-1" style=" margin-left: 30%;">
+                                <i style="margin-left: 0%;" class="bi bi-phone"></i>
+
+                            </div>
+                            <div class="col-6">
+                                <p>{{anuncio.telefono}}</p>
+                            </div>
+
+                        </div>
+                        <div class="row">
+                            <div class="col-7" style="margin-left: 40%;">
+                                <a href="https://api.whatsapp.com/send?phone=51{{anuncio.telefono}}" style="margin-left: 3%; color: #3f3d59;" id="boton">Chatear</a>
+                            </div>
+                        </div>
+
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+
+    </div>
+    <br>
+{% endif %}
+
+{% endblock %}
+
+
+
+{% block agregadoFoot %} 
+{% endblock %}
+
+{% block funciones %}
+
+{% endblock %}
+
+

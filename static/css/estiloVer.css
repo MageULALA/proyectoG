@@ -1,3 +1,4 @@
+
 #boton{
     padding: 0.5em;  
     border: solid #a0ce4e 2px; 
@@ -6,7 +7,6 @@
     font-weight: bolder;
     padding-left: 1em;
     padding-right: 1em;
-    color: #3f3d59;
 }
 
 #boton:hover{
@@ -14,7 +14,7 @@
     color: white;
 }
 
-.credit-card-div  span { padding-top:10px; }
-.credit-card-div img { padding-top:30px; }
-.credit-card-div .small-font { font-size:9px; }
-.credit-card-div .pad-adjust { padding-top:10px; }
+
+
+
+

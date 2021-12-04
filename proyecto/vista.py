@@ -10,17 +10,20 @@ from django.contrib import messages
 from administrador.models import Perfil
 from administrador.models import Paquete
 from proyecto.carrito import Carrito
-from administrador.models import Anuncio
+from administrador.models import Anuncio, Venta
+from proyecto.context_processor import total_carrito
+from administrador.models import Departamento
 from .forms import UserRegistroForm, AnuncioForm
 from django.conf import settings
 from django.core.mail import send_mail
 from django.template import RequestContext
 
 def inicio(request):
-    anunciosNuevos = Anuncio.objects.all()
-    anunciosMasSolicitados = Anuncio.objects.all()
-    anunciosMasSeguidos = Anuncio.objects.all()
-    return render(request, 'indexGeneral.html', {'anunciosNuevos': anunciosNuevos,'anunciosMasSolicitados':anunciosMasSolicitados,'anunciosMasSeguidos':anunciosMasSeguidos})
+    anunciosNuevos = Anuncio.objects.filter(estado="A")
+    anunciosMasSolicitados = Anuncio.objects.filter(estado="A")
+    anunciosMasSeguidos = Anuncio.objects.filter(estado="A")
+    departamentos=Departamento.objects.all()
+    return render(request, 'indexGeneral.html', {'anunciosNuevos': anunciosNuevos,'anunciosMasSolicitados':anunciosMasSolicitados,'anunciosMasSeguidos':anunciosMasSeguidos, 'departamentos':departamentos})
 
 def busqueda(request):
     return render(request, 'busqueda.html')
@@ -142,3 +145,29 @@ def limpiar_carrito(request):
 def anunciosPerfil(request):
     anunciosUsuario = Anuncio.objects.all()
     return render(request, "misanuncios.html", {'anunciosUsuario': anunciosUsuario})
+
+
+def crearVenta(request):
+    try:
+        if request.method == 'POST':
+            current_user = get_object_or_404(User, pk=request.user.pk)
+            numeroTarjeta = request.POST.get('numeroTarjeta')
+            total = total_carrito()
+            totalValor=total["total_carrito"]
+            objVenta=Venta.objects.create(user=current_user.id)
+            objVenta.total=totalValor
+            objVenta.numeroTarjeta=numeroTarjeta
+            objVenta.save()
+            messages.success(request, f'Compra registrada')
+            redirect('inicio')
+        else:
+            messages.success(request, f'Acción inválida')
+            print(f'Hola')
+            redirect('inicio')
+            #return render(request, 'tienda.html', {'numeroTarjeta':''})
+    except Exception as e:
+        print(e)
+
+def verAnuncio(request, anuncio_id):
+    objAnuncio = Anuncio.objects.filter(id = anuncio_id).first()
+    return render(request, 'verAnuncio.html', {'anuncio':objAnuncio})
