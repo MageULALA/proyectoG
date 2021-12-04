@@ -8,6 +8,7 @@
         <tr>
           <th scope="col">PAQUETE</th>
           <th scope="col">PRECIO</th>
+          <th scope="col">AUMULADO</th>
           <th scope="col">CANTIDAD</th>
         </tr>
       </thead>
@@ -16,6 +17,8 @@
       {% for key, value in request.session.carrito.items %}
         <tr>
           <td>{{value.descripcion}}</td>
+          <td>{{value.precio}}
+          </td>
           <td>{{value.acumulado}}
           </td>
           <td>
