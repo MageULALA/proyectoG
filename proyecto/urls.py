@@ -32,12 +32,13 @@ urlpatterns = [
     path('perfil/', vista.miperfil, name='perfil'),
     path('anunciar/', vista.anunciar, name='anunciar'),
     path('verificar/', vista.verificar, name='verificar'),
-    path('verificar/<auth_token>', vista.verificado, name='verificado'),
+    path('verificar/<auth_token>/', vista.verificado, name='verificado'),
     path('tienda/', vista.tienda, name='tienda'),
-    path('agregar/<int:paquete_id>', vista.agregar_paquete, name='Add'),
-    path('eliminar/<int:paquete_id>', vista.eliminar_paquete, name='Del'),
-    path('restar/<int:paquete_id>', vista.restar_paquete, name='Sub'),
+    path('agregar/<int:paquete_id>/', vista.agregar_paquete, name='Add'),
+    path('eliminar/<int:paquete_id>/', vista.eliminar_paquete, name='Del'),
+    path('restar/<int:paquete_id>/', vista.restar_paquete, name='Sub'),
     path('limpiar/', vista.limpiar_carrito, name='CLS'),
+    path('anunciosPerfil/', vista.anunciosPerfil, name='anunciosPerfil'),
 ]
 
 if settings.DEBUG:

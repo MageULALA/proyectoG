@@ -23,14 +23,14 @@ class Paquete(models.Model):
     descripcion = models.CharField(max_length=80)
     cantidadAnuncios = models.SmallIntegerField(default=1)
     duracionDias = models.SmallIntegerField(default=6)
-    precio = models.DecimalField(decimal_places=2,max_digits=6)
+    precio = models.IntegerField(null=True)
     vigencia = models.CharField(max_length=1,default="V", blank=True)
     def __str__(self):
         return self.descripcion
 
 class Venta(models.Model):
     fecha= models.DateTimeField(default=timezone.now)
-    total = models.DecimalField(decimal_places=2,max_digits=8)
+    total = models.IntegerField(null=True)
     numeroTarjeta=models.CharField(max_length=16, null=True, blank=True)
 
 class Licencia(models.Model):

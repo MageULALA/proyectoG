@@ -10,6 +10,7 @@ from django.contrib import messages
 from administrador.models import Perfil
 from administrador.models import Paquete
 from proyecto.carrito import Carrito
+from administrador.models import Anuncio
 from .forms import UserRegistroForm, AnuncioForm
 from django.conf import settings
 from django.core.mail import send_mail
@@ -135,4 +136,6 @@ def limpiar_carrito(request):
     carrito.limpiar()
     return redirect('tienda')
 
-
+def anunciosPerfil(request):
+    anunciosUsuario = Anuncio.objects.all()
+    return render(request, "misanuncios.html", {'anunciosUsuario': anunciosUsuario})

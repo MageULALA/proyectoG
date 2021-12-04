@@ -16,12 +16,12 @@
       {% for key, value in request.session.carrito.items %}
         <tr>
           <td>{{value.descripcion}}</td>
-          <td>{{value.precio}}</td>
           <td>{{value.acumulado}}
-            <a href="{% url 'Add' paquete.id %}" class="badge btn btn-dark badge-dark">+</a>
-            <h4>{{value.cantidad}}</h4>
-            <a href="{% url 'Sub' paquete.id %}" class="badge btn btn-dark badge-dark">-</a>
           </td>
+          <td>
+            <a href=" {% url 'Add' value.paquete_id %} " style="font-size: 10px;" class="badge btn btn-dark badge-dark">+</a>
+            {{value.cantidad}}
+            <a href=" {% url 'Sub' value.paquete_id %} " style="font-size: 10px;" class="badge btn btn-dark badge-dark">-</a></td>
         </tr>
       {% endfor %}
       {% else %}
@@ -33,15 +33,15 @@
       {% endif %}
         <tr>
           <th scope="row">Total:</th>
-          <td colspan="2">$ {{total_carrito}}</td>
+          <td colspan="2">S/. {{total_carrito}}</td>
         </tr>
       </tbody>
     </table>
     <hr>
     </div>
     <div class="row text-center">
-        <div class="col-6"><a href="{% url 'CLS' %}" class="btn btn-danger">Limpiar</a></div>
-        <div class="col-6"><a href="#" class="btn btn-success">Guardar</a></div>
+        <div class="col-6"><a href="{% url 'CLS' %}" style="margin-left: 3%;" id="boton">Limpiar</a></div>
+        <div class="col-6"><a href="#" style="margin-left: 3%;" id="boton">Guardar</a></div>
     </div>
 
 

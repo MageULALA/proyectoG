@@ -1,0 +1,36 @@
+{% extends "PerfilUsuario.html" %}
+
+{% load static %}
+
+{% block estilos %}
+<link rel="stylesheet" href="{% static 'css/perfil.css' %}">
+{% endblock %}
+
+
+{% block titulo %}Bienvenido de nuevo | BOOM {% endblock %}
+
+{% block masopcionesNav %}
+
+{% endblock %}
+
+{% if messages %}
+  {% for message in messages %}
+
+  {% endfor%}
+{% endif %}
+
+
+{% block cuerpo %} 
+<div>HOLA bebé</div>
+{{block.super}}
+{% endblock %}
+
+
+
+{% block agregadoFoot %} 
+{% endblock %}
+
+{% block funciones %}
+
+{% endblock %}
+

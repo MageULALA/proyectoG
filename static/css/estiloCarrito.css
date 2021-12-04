@@ -1,0 +1,15 @@
+#boton{
+    padding: 0.5em;  
+    border: solid #a0ce4e 2px; 
+    background: white; 
+    margin-left: 6%;
+    font-weight: bolder;
+    padding-left: 1em;
+    padding-right: 1em;
+    color: #3f3d59;
+}
+
+#boton:hover{
+    background: #a0ce4e;
+    color: white;
+}
