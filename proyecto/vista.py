@@ -17,7 +17,10 @@ from django.core.mail import send_mail
 from django.template import RequestContext
 
 def inicio(request):
-    return render(request, 'indexGeneral.html')
+    anunciosNuevos = Anuncio.objects.all()
+    anunciosMasSolicitados = Anuncio.objects.all()
+    anunciosMasSeguidos = Anuncio.objects.all()
+    return render(request, 'indexGeneral.html', {'anunciosNuevos': anunciosNuevos,'anunciosMasSolicitados':anunciosMasSolicitados,'anunciosMasSeguidos':anunciosMasSeguidos})
 
 def busqueda(request):
     return render(request, 'busqueda.html')

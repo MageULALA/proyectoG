@@ -88,34 +88,97 @@
 <!-- fashion section start -->
 
 <div class="container testimonial-group">
+  <h1 class="masanuncios" style="text-align:center;"><a href="">Nuevos</a></h1>
   <div class="row text-center">
+
+    {% for anuncio in anunciosNuevos %}
     <div style="padding: 0px; border-radius: 10px;" class="col-3">
+      <a href="hola">
+        <div class="card" style="align-items: center; padding-left: 0px;margin-left: 0px;">
+          <img  class="card-img-top" style="width: 300px; height: 350px; margin: 0px 0px;" src=" {{anuncio.rutaimagen.url}} " alt="Card image cap">
+          <div class="card-body" style="text-align:center;padding-left: 0px;width: 90%;">
+            <div style="font-size: 11px; color: black; text-align:center ;width: 150px;display: flex;">
+              {{anuncio.titulo}}
+            </div>
+            <div><p class="card-text" style="text-align:center;padding-left: 0px;"><small class="text-muted">{{anuncio.departamento}}</small></p></div>
+            <div><p class="card-text" style="text-align:center;padding-left: 0px;"><small class="text-muted">{{anuncio.timestamp}}</small></p></div>
 
-      <div class="card" style="align-items: center;">
-        <img  class="card-img-top" style="width: 280px; margin: 0px;" src="{% static 'images/photo-studio-ga73bb9bee_1920.jpg' %}" alt="Card image cap">
-        <div class="card-body">
-          <div style="font-size: 12px; color: black;">
-            mjunkojuygmjunkojuygmjunkojuygmjunkojuygmjunkojuyg hfhfhhf
           </div>
-          <div><p class="card-text"><small class="text-muted">Lambayeque</small></p></div>
-          <div><p class="card-text"><small class="text-muted">14/05/2019 13:45 </small></p></div>
-            <a style="font-size: 14px;" href="">VER MAS</a>
-            <a style="font-size: 14px;" href="">VER MAS</a> 
         </div>
-      </div>
+      </a>
+    </div>
+    {% endfor %}
 
-    </div><!--
- --><div style="padding: 0px;" class="col-3">2</div><!--
- --><div class="col-3">3</div><!--
- --><div class="col-3">4</div><!--
- --><div class="col-3">5</div><!--
- --><div class="col-3">6</div><!--
- --><div class="col-3">7</div><!--
- --><div class="col-3">8</div><!--
- --><div class="col-3">9</div>
   </div>
 </div>
 
+<br>
+
+<!---MAS SOLICITADOS-->
+
+<div class="container testimonial-group">
+  <h1 class="masanuncios" style="text-align:center;"><a href=""><i class="bi bi-plus-lg"></i>Solicitados</a></h1>
+  <div class="row text-center">
+
+
+    {% for anuncio in anunciosMasSolicitados %}
+    <div style="padding: 0px; border-radius: 10px;" class="col-3">
+      <a href="hola">
+        <div class="card" style="align-items: center; padding-left: 0px;margin-left: 0px;">
+          <img  class="card-img-top" style="width: 300px; height: 350px; margin: 0px 0px;" src=" {{anuncio.rutaimagen.url}} " alt="Card image cap">
+          <div class="card-body" style="text-align:center;padding-left: 0px;width: 90%;">
+            <div style="font-size: 11px; color: black; text-align:center ;width: 150px;display: flex;">
+              {{anuncio.titulo}}
+            </div>
+            <div><p class="card-text" style="text-align:center;padding-left: 0px;"><small class="text-muted">{{anuncio.departamento}}</small></p></div>
+            <div><p class="card-text" style="text-align:center;padding-left: 0px;"><small class="text-muted">{{anuncio.timestamp}}</small></p></div>
+
+          </div>
+        </div>
+      </a>
+    </div>
+    {% endfor %}
+
+  </div>
+</div>
+
+<br>
+
+<!---MAS SEGUIDOS-->
+
+<div class="container testimonial-group">
+  <h1 class="masanuncios" style="text-align:center;"><a href=""><i class="bi bi-plus-lg"></i>Seguidos</a></h1>
+  <div class="row text-center">
+
+
+    {% for anuncio in anunciosMasSeguidos %}
+    <div style="padding: 0px; border-radius: 10px;" class="col-3">
+      <a href="hola">
+        <div class="card" style="align-items: center; padding-left: 0px;margin-left: 0px;">
+          <img  class="card-img-top" style="width: 300px; height: 350px; margin: 0px 0px;" src=" {{anuncio.rutaimagen.url}} " alt="Card image cap">
+          <div class="card-body" style="text-align:center;padding-left: 0px;width: 90%;">
+            <div style="font-size: 11px; color: black; text-align:center ;width: 150px;display: flex;">
+              {{anuncio.titulo}}
+            </div>
+            <div><p class="card-text" style="text-align:center;padding-left: 0px;"><small class="text-muted">{{anuncio.departamento}}</small></p></div>
+            <div><p class="card-text" style="text-align:center;padding-left: 0px;"><small class="text-muted">{{anuncio.timestamp}}</small></p></div>
+
+          </div>
+        </div>
+      </a>
+    </div>
+    {% endfor %}
+
+  
+ <div class="col-3">3</div><!--
+ --><div class="col-3">4</div><!--
+ --><div class="col-3">5</div><!--
+ --><div class="col-3">6</div>
+
+  </div>
+</div>
+
+<br>
  <!---FIn section solicitados-->        
 
 <div class="contenedorBotones">
