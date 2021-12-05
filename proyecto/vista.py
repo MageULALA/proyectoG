@@ -1,32 +1,37 @@
 from django import forms
 from django.contrib.auth.models import User
+from django.db.models import query
+from django.db.models.query_utils import Q
 from django.forms.forms import Form
 from django.http import HttpResponse
+from django.http.response import HttpResponseRedirect
 from django.template import Template
 from django.shortcuts import get_object_or_404, redirect, render
 from django.contrib.auth import authenticate, forms, login
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib import messages
-from administrador.models import Perfil
-from administrador.models import Paquete
+from administrador.models import Perfil,Servicio, Anuncio, Venta, Departamento, Paquete
 from proyecto.carrito import Carrito
-from administrador.models import Anuncio, Venta
 from proyecto.context_processor import total_carrito
-from administrador.models import Departamento
+from django.urls import reverse
 from .forms import UserRegistroForm, AnuncioForm
 from django.conf import settings
 from django.core.mail import send_mail
 from django.template import RequestContext
 
 def inicio(request):
-    anunciosNuevos = Anuncio.objects.filter(estado="A")
-    anunciosMasSolicitados = Anuncio.objects.filter(estado="A")
-    anunciosMasSeguidos = Anuncio.objects.filter(estado="A")
-    departamentos=Departamento.objects.all()
-    return render(request, 'indexGeneral.html', {'anunciosNuevos': anunciosNuevos,'anunciosMasSolicitados':anunciosMasSolicitados,'anunciosMasSeguidos':anunciosMasSeguidos, 'departamentos':departamentos})
+    palabras = request.GET.get('buscar')
+    print(f'Hola', palabras)
+    if palabras:
+        return HttpResponseRedirect(reverse('inicio/{palabras}'))
 
-def busqueda(request):
-    return render(request, 'busqueda.html')
+    else:
+        anunciosNuevos = Anuncio.objects.filter(estado="A")
+        anunciosMasSolicitados = Anuncio.objects.filter(estado="A")
+        anunciosMasSeguidos = Anuncio.objects.filter(estado="A")
+        departamentos=Departamento.objects.all()
+        return render(request, 'indexGeneral.html', {'anunciosNuevos': anunciosNuevos,'anunciosMasSolicitados':anunciosMasSolicitados,'anunciosMasSeguidos':anunciosMasSeguidos, 'departamentos':departamentos})
+
 
 def miperfil(request):
     return render(request, 'PerfilUsuario.html')
@@ -66,7 +71,6 @@ def anunciar(request):
 
     return render(request, 'anunciar.html', { 'form' : form })
 
-#def enviarToken
 
 def verificar(request):
     return render(request, 'verificarCorreo.html')
@@ -171,3 +175,15 @@ def crearVenta(request):
 def verAnuncio(request, anuncio_id):
     objAnuncio = Anuncio.objects.filter(id = anuncio_id).first()
     return render(request, 'verAnuncio.html', {'anuncio':objAnuncio})
+
+def anunciosBuscados(request, palabras):
+    departamentos = Departamento.objects.all()
+    servicios = Servicio.objects.filter(vigencia='V')
+    if palabras:
+        anuncios = Anuncio.objects.filter(Q(servicio__icontains = palabras) | Q(departamento = palabras) | Q(titulo__icontains = palabras) | Q(descripcion__icontains = palabras))
+        return render (request,'busqueda.html',{'departamentos': departamentos, 'servicios':servicios, 'anuncios': anuncios})
+    return render (request,'busqueda.html',{'departamentos': departamentos, 'servicios':servicios})
+
+
+
+

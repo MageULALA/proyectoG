@@ -16,6 +16,7 @@ Including another URLconf
 from django import template
 from django.contrib import admin
 from django.contrib.auth import login
+from django.shortcuts import redirect
 from django.urls import path
 from django.conf import settings
 from django.conf.urls.static import static
@@ -27,8 +28,8 @@ urlpatterns = [
     path('inicio/', vista.inicio, name='inicio'),
     path('registro/', vista.registro, name='registro'),
     path('login/', vista.loginUser, name='login'),
-    path('logout/', LogoutView.as_view(template_name='indexGeneral.html'), name='logout'),
-    path('busqueda/', vista.busqueda, name='busqueda'),
+    path('logout/', LogoutView.as_view(), name='logout'),
+    path('anunciosBuscados/<slug:palabras>/', vista.anunciosBuscados, name='anunciosBuscados'),
     path('perfil/', vista.miperfil, name='perfil'),
     path('anunciar/', vista.anunciar, name='anunciar'),
     path('verificar/', vista.verificar, name='verificar'),

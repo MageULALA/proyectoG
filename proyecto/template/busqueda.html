@@ -23,13 +23,14 @@
                       value="2021-11-29"
                   min="2020-01-01" max="2021-12-30">
 
-          <form  action="GET" class="row">
+          <form  action="POST" class="row">
+            {% csrf_token %}
             <div class="col-auto">
-              <input type="text" class="form-control" id="buscar" placeholder="Escriba palabras clave" >
+              <input style="width: 100%;" type="text" class="form-control" name="buscar" id="buscar" placeholder="Escriba palabras clave" >
             </div>
 
             <div class="col-auto">
-              <button type="submit" class="boton-buscar2">Buscar</button>
+              <button type="submit" class="boton-buscar">Buscar</button>
             </div>
         
           </form>
@@ -63,11 +64,12 @@
                         </button>
                       </h2>
                       <div id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo">
-                        
+                      {% for servicio in servicios %}
                         <li class="nav-item">
-                          <a class="nav-link active" href="#">Seguridad</a>
-                        <li class="nav-item">
-                        
+                          <a class="nav-link active" style="color: black;font-size: 16px;" href="#">{{servicio.nombre}}</a>
+                        </li>
+                        {% endfor %}
+
                       </div>
                     </div>
                     <!---Fin Acordeón Servicios-->
@@ -89,12 +91,11 @@
                 </h2>
                 <div id="flush-collapseThree" class="accordion-collapse collapse" aria-labelledby="flush-headingThree">
                   <div class="body">
+                    {% for departamento in departamentos %}
                     <li class="nav-item">
-                      <a class="nav-link active" href="#">Cajamarca</a>
-                    <li class="nav-item">
-                      <a class="nav-link active" href="#">Lambayeque</a>
+                      <a class="nav-link active" style="color: black;font-size: 16px;" href="#">{{departamento.nombre}}</a>
                     </li>
-
+                    {% endfor %}
                   </div>
                 </div>
               </div>
@@ -107,39 +108,22 @@
         <div class="row" style="padding: 0px 0;">
             <div class="col-12">
                 <div class="row">
-
+                  {% for anuncio in anuncios %}
                     <div class="col-3" style="padding-top: 0px;" id="anuncio">
                       <a href="hola">
                         <div class="card" style="align-items: center;">
-                          <img  class="card-img-top" style="width: 280px; margin: 0px;" src="{% static 'images/photo-studio-ga73bb9bee_1920.jpg' %}" alt="Card image cap">
+                          <img  class="card-img-top" style="width: 280px; margin: 0px;" src="{% url 'verAnuncio' anuncio.id %}">
                           <div class="card-body">
                             <div style="font-size: 12px; color: black; text-align:center ;width: 150px;">
-                              mjunkojuygmjunkojuygmjunkojuygmjunkojuygmjunkojuyg hfhfhhf
+                              {{anuncio.titulo}}
                             </div>
-                            <div><p class="card-text" style="text-align:center;"><small class="text-muted">Lambayeque</small></p></div>
-                            <div><p class="card-text" style="text-align:center;"><small class="text-muted">14/05/2019 13:45 </small></p></div>
-
+                            <div><p class="card-text" style="text-align:center;"><small class="text-muted">{{anuncio.departamento}}</small></p></div>
+                            <div><p class="card-text" style="text-align:center;"><small class="text-muted">{{anuncio.timestamp}}</small></p></div>
+                    {% endfor %}
                           </div>
                         </div>
                       </a>
                     </div>
-
-                    <div class="col-3" style="padding-top: 0px;" id="anuncio">
-                      <a href="hola">
-                        <div class="card" style="align-items: center;">
-                          <img  class="card-img-top" style="width: 280px; margin: 0px;" src="{% static 'images/photo-studio-ga73bb9bee_1920.jpg' %}" alt="Card image cap">
-                          <div class="card-body">
-                            <div style="font-size: 12px; color: black; text-align:center ;width: 150px;">
-                              mjunkojuygmjunkojuygmjunkojuygmjunkojuygmjunkojuyg hfhfhhf
-                            </div>
-                            <div><p class="card-text" style="text-align:center;"><small class="text-muted">Lambayeque</small></p></div>
-                            <div><p class="card-text" style="text-align:center;"><small class="text-muted">14/05/2019 13:45 </small></p></div>
-
-                          </div>
-                        </div>
-                      </a>
-                    </div>
-
 
                 </div>
             </div>
