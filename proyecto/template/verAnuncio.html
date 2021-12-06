@@ -26,7 +26,7 @@
 
                     <div class="col-12" >
                         <div class="row">
-                            <img src=" {{anuncio.rutaimagen.url}} " style="width: 40%; margin-left: 30%;">
+                            <img src=" {{anuncio.rutaimagen.url}} " style="width: 250px; height: 250px; margin-left: 30%;">
                         </div>
                     </div>
 
@@ -87,7 +87,7 @@
 
                             <div class="col-10">
                                 <b>
-                                    <h3 style="color: #3f3d59;"> Servicio de Electricidad y soldador</h3>
+                                    <h3 style="color: #3f3d59;">{{anuncio.titulo}}</h3>
                                 </b>
                             </div>
 
@@ -125,12 +125,12 @@
                         
                             <div class="col-3" style="background: none;">
 
-                                <img src="{{anuncio.user.perfil.rutaimagen.url}}" style="border-radius: 60%; width: 60%; height: 90%;" >
+                                <img src=" {{anuncio.user.perfil.rutaimagen.url}} " style="border-radius: 60%; width: 60%; height: 90%;" >
                                 
                             </div>
                             <div class="col-9" >
                                 <p>{{anuncio.user.first_name}}</p>
-                                <p> <a href="" style="color: black;font-style: oblique;">@{{anuncio.user}}</a></p>
+                                <p> <a href="{% url 'verperfil' anuncio.user %}" style="color: black;font-style: oblique;">@{{anuncio.user}}</a></p>
                             </div>
 
                         </div>

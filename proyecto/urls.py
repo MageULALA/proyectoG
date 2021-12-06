@@ -29,8 +29,8 @@ urlpatterns = [
     path('registro/', vista.registro, name='registro'),
     path('login/', vista.loginUser, name='login'),
     path('logout/', LogoutView.as_view(), name='logout'),
-    path('anunciosBuscados/<slug:palabras>/', vista.anunciosBuscados, name='anunciosBuscados'),
-    path('perfil/', vista.miperfil, name='perfil'),
+    path('anunciosBuscados/<str:palabras>/', vista.anunciosBuscados, name='anunciosBuscados'),
+    path('verperfil/<str:username>/', vista.verperfil, name='verperfil'),
     path('anunciar/', vista.anunciar, name='anunciar'),
     path('verificar/', vista.verificar, name='verificar'),
     path('verificar/<auth_token>/', vista.verificado, name='verificado'),
@@ -42,8 +42,8 @@ urlpatterns = [
     path('anunciosPerfil/', vista.anunciosPerfil, name='anunciosPerfil'),
     path('crearVenta/', vista.crearVenta, name='crearVenta'),
     path('verAnuncio/<int:anuncio_id>/', vista.verAnuncio, name='verAnuncio'),
-
-
+    path('anunciosBuscadosServicio/<str:nombreservicio>/', vista.anunciosBuscadosServicio, name='anunciosBuscadosServicio'),
+    path('anunciosBuscadosUbicacion/<str:nombredepartamento>/', vista.anunciosBuscadosUbicacion, name='anunciosBuscadosUbicacion'),
 ]
 
 if settings.DEBUG:

@@ -7,7 +7,7 @@
 {% endblock %}
 
 
-{% block titulo %}Bienvenido de nuevo | BOOM {% endblock %}
+{% block titulo %}Perfil del usuario | BOOM {% endblock %}
 
 {% block masopcionesNav %}
 
@@ -26,28 +26,21 @@
         <div class="portada-perfil" style="width: 100%; height: 180px;">
 
             <div class="avatar-perfil">
-                <img src="recursosPerfil/FtoPerfil.PNG" alt="img">
+                <img src="{{ user.perfil.rutaimagen.url}}" alt="img">
                 <a href="#" class="cambiar-foto">
                     <i class="fas fa-camera"></i> 
                     <span>Cambiar foto</span>
                 </a>
             </div>
             <div class="datos-perfil">
-                <h4 class="titulo-usuario">Harold Ivan Roncal Gaslac</h4>
-                <ul class="lista-perfil">
-                    <li style="color: #3f3d59;">00 Anuncios</li>
-                    <li style="color: #3f3d59;">00 Favoritos </li>
-                    <li style="color: #3f3d59;">00 Seguidos</li>
-                    <li style="color: #3f3d59;">00 Seguidores</li>
-                </ul>
+                <h5 style="font-size:30px;" class="titulo-usuario">{{ user.first_name }}</h5>
+                <h5 style="font-size:20px;" class="titulo-usuario">@{{ user.username }}</h5>
             </div>
         </div>
         <div class="menu-perfil">
             <ul>
-                <li><a href="#" title=""><i class="icono-perfil fas fa-bullhorn"></i>Anuncios</a></li>
-                <li><a href="#" title=""><i class="icono-perfil fas fa-info-circle"></i>Favoritos</a></li>
-                <li><a href="#" title=""><i class="icono-perfil fas fa-grin"></i> Seguidos</a></li>
-                <li><a href="#" title=""><i class="icono-perfil fas fa-grin"></i> Seguidores</a></li>
+                <li><a href="#" title=""><i class="icono-perfil fas fa-bullhorn"></i>Anuncios {{ user.anunciosUsuario.count }}</a></li>
+                <li><a href="#" title=""><i class="icono-perfil fas fa-info-circle"></i>Favoritos 00</a></li>
             </ul>
         </div>
     </div>

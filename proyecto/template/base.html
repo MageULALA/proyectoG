@@ -37,7 +37,7 @@
                   <i style="color: white;" class="bi bi-person"></i>
                 </button>
                 <ul class="dropdown-menu">
-                  <li><a class="dropdown-item" href="{% url 'perfil'  %}">Mi perfil</a></li>
+                  <li><a class="dropdown-item" href="{% url 'verperfil' user.username %}">Mi perfil</a></li>
                   <li><a class="dropdown-item" href="{% url 'tienda'  %}">Comprar paquetes</a></li>
                   <li><a class="dropdown-item" href="{% url 'logout'  %}">Cerar sesión</a></li>
                 </ul>

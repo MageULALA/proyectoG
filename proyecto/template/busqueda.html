@@ -18,22 +18,18 @@
 <div class="row">
   <div class="col">
       <div class="formulario-buscador2">
-          <label id="publicado" for="start">PUBLICADO EL: </label>
-          <input type="date" id="start" name="trip-start"
-                      value="2021-11-29"
-                  min="2020-01-01" max="2021-12-30">
-
-          <form  action="POST" class="row">
-            {% csrf_token %}
+          
+          <div class="row">
+   
             <div class="col-auto">
               <input style="width: 100%;" type="text" class="form-control" name="buscar" id="buscar" placeholder="Escriba palabras clave" >
             </div>
 
             <div class="col-auto">
-              <button type="submit" class="boton-buscar">Buscar</button>
+              <button id="formbutton" style="color: black;" class="boton-buscar">Buscar</button>
             </div>
         
-          </form>
+          </div>
 
         </div>
     </div>
@@ -66,7 +62,7 @@
                       <div id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo">
                       {% for servicio in servicios %}
                         <li class="nav-item">
-                          <a class="nav-link active" style="color: black;font-size: 16px;" href="#">{{servicio.nombre}}</a>
+                          <a class="nav-link active" style="color: black;font-size: 16px;" href=" {% url 'anunciosBuscadosServicio' servicio.nombre %}">{{servicio.nombre}}</a>
                         </li>
                         {% endfor %}
 
@@ -91,11 +87,14 @@
                 </h2>
                 <div id="flush-collapseThree" class="accordion-collapse collapse" aria-labelledby="flush-headingThree">
                   <div class="body">
+
                     {% for departamento in departamentos %}
                     <li class="nav-item">
-                      <a class="nav-link active" style="color: black;font-size: 16px;" href="#">{{departamento.nombre}}</a>
+                      <a class="nav-link active" style="color: black;font-size: 16px;" href=" {% url 'anunciosBuscadosUbicacion' departamento.nombre %} ">{{departamento.nombre}}</a>
                     </li>
                     {% endfor %}
+                    
+
                   </div>
                 </div>
               </div>
@@ -108,23 +107,28 @@
         <div class="row" style="padding: 0px 0;">
             <div class="col-12">
                 <div class="row">
+                  {% if anuncios %}
                   {% for anuncio in anuncios %}
                     <div class="col-3" style="padding-top: 0px;" id="anuncio">
-                      <a href="hola">
+                      <a href=" {% url 'verAnuncio' anuncio.id %} ">
                         <div class="card" style="align-items: center;">
-                          <img  class="card-img-top" style="width: 280px; margin: 0px;" src="{% url 'verAnuncio' anuncio.id %}">
+                          <img  class="card-img-top" style="width: 200px; height: 250px; margin: 0px;" src=" {{anuncio.rutaimagen.url}} ">
                           <div class="card-body">
                             <div style="font-size: 12px; color: black; text-align:center ;width: 150px;">
                               {{anuncio.titulo}}
                             </div>
                             <div><p class="card-text" style="text-align:center;"><small class="text-muted">{{anuncio.departamento}}</small></p></div>
                             <div><p class="card-text" style="text-align:center;"><small class="text-muted">{{anuncio.timestamp}}</small></p></div>
-                    {% endfor %}
+                    
                           </div>
                         </div>
                       </a>
                     </div>
+                    {% endfor %}
 
+                    {% else %}
+                    <div class="align-items-center" style="margin-left:100px;" ><h4>Sin resultados</h4></div>
+                    {% endif %}
                 </div>
             </div>
         </div>
@@ -132,7 +136,7 @@
 
 </div>
 
-<!----->
+
 
 
 
@@ -146,5 +150,19 @@
 {% endblock %}
 
 {% block funciones %}
+
+<script>  
+  const box = document.getElementById("buscar");
+  const button =  document.getElementById("formbutton");
+  
+
+button.addEventListener("click" , () => {
+  const value =  box.value;
+
+  window.location.href = `/anunciosBuscados/${value}`;
+
+})
+</script>
+
 
 {% endblock %}

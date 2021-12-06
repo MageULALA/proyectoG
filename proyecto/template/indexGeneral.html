@@ -57,17 +57,17 @@
     </button>
   </div>
   <div class="formulario-buscador">
-    <form  method="get" class="row">
+    <div   class="row">
       <div class="col-10">
-        <input style="width: 100%;" type="text" class="form-control" name="buscar" id="buscar" placeholder="Escriba palabras clave" >
+        <input  style="width: 100%;" type="text" class="form-control" name="buscar" id="buscar" placeholder="Escriba palabras clave" >
       </div>
    
       <div class="col-2">
-        <button type="submit" class="boton-buscar">Buscar</button>
+        <button id="formbutton" type="button" class="boton-buscar">Buscar</button>
       </div>
-  
-    </form>
+    </div>
   </div>
+
 </section>
 
 
@@ -247,5 +247,18 @@
 {% endblock %}
 
 {% block funciones %}
+<script>  
+  const box = document.getElementById("buscar");
+  const button =  document.getElementById("formbutton");
+button.addEventListener("click" , () => {
+  const value =  box.value;
 
+  window.location.href = `/anunciosBuscados/${value}`;
+
+}
+
+
+)
+
+</script>
 {% endblock %}

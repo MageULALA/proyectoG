@@ -1,10 +1,11 @@
+from datetime import datetime
 from django import forms
 from django.contrib.auth.models import User
 from django.db.models import query
 from django.db.models.query_utils import Q
 from django.forms.forms import Form
 from django.http import HttpResponse
-from django.http.response import HttpResponseRedirect
+from django.http.response import HttpResponsePermanentRedirect, HttpResponseRedirect
 from django.template import Template
 from django.shortcuts import get_object_or_404, redirect, render
 from django.contrib.auth import authenticate, forms, login
@@ -22,19 +23,12 @@ from django.template import RequestContext
 def inicio(request):
     palabras = request.GET.get('buscar')
     print(f'Hola', palabras)
-    if palabras:
-        return HttpResponseRedirect(reverse('inicio/{palabras}'))
 
-    else:
-        anunciosNuevos = Anuncio.objects.filter(estado="A")
-        anunciosMasSolicitados = Anuncio.objects.filter(estado="A")
-        anunciosMasSeguidos = Anuncio.objects.filter(estado="A")
-        departamentos=Departamento.objects.all()
-        return render(request, 'indexGeneral.html', {'anunciosNuevos': anunciosNuevos,'anunciosMasSolicitados':anunciosMasSolicitados,'anunciosMasSeguidos':anunciosMasSeguidos, 'departamentos':departamentos})
+    anunciosNuevos = Anuncio.objects.filter(estado="A")
+    anunciosMasSolicitados = Anuncio.objects.filter(estado="A")
+    anunciosMasSeguidos = Anuncio.objects.filter(estado="A")
+    return render(request, 'indexGeneral.html', {'anunciosNuevos': anunciosNuevos,'anunciosMasSolicitados':anunciosMasSolicitados,'anunciosMasSeguidos':anunciosMasSeguidos})
 
-
-def miperfil(request):
-    return render(request, 'PerfilUsuario.html')
 
 def registro(request):
     if request.method == 'POST':
@@ -176,14 +170,33 @@ def verAnuncio(request, anuncio_id):
     objAnuncio = Anuncio.objects.filter(id = anuncio_id).first()
     return render(request, 'verAnuncio.html', {'anuncio':objAnuncio})
 
-def anunciosBuscados(request, palabras):
+def anunciosBuscados(request, *args, **kwargs):
+    palabras = kwargs.get("palabras")
     departamentos = Departamento.objects.all()
     servicios = Servicio.objects.filter(vigencia='V')
     if palabras:
-        anuncios = Anuncio.objects.filter(Q(servicio__icontains = palabras) | Q(departamento = palabras) | Q(titulo__icontains = palabras) | Q(descripcion__icontains = palabras))
+        anuncios = Anuncio.objects.filter( Q(servicio__nombre__icontains = palabras) | Q(titulo__icontains = palabras) | Q(descripcion__icontains = palabras) ).distinct()
         return render (request,'busqueda.html',{'departamentos': departamentos, 'servicios':servicios, 'anuncios': anuncios})
     return render (request,'busqueda.html',{'departamentos': departamentos, 'servicios':servicios})
 
+def anunciosBuscadosServicio(request, nombreservicio):
+    objAnuncios = Anuncio.objects.filter(servicio__nombre = nombreservicio)
+    departamentos = Departamento.objects.all()
+    servicios = Servicio.objects.filter(vigencia='V')
+    return render (request,'busqueda.html',{'departamentos': departamentos, 'servicios':servicios, 'anuncios': objAnuncios})
 
+def anunciosBuscadosUbicacion(request, nombredepartamento):
+    objAnuncios = Anuncio.objects.filter(departamento__nombre = nombredepartamento)
+    departamentos = Departamento.objects.all()
+    servicios = Servicio.objects.filter(vigencia='V')
+    return render (request,'busqueda.html',{'departamentos': departamentos, 'servicios':servicios, 'anuncios': objAnuncios})
 
-
+def verperfil(request, username=None):
+    current_user = request.user
+    if username and username != current_user.username:
+        user = User.objects.get(username=username)
+        anuncios = user.anunciosUsuario.all()
+    else:
+        anuncios = current_user.anunciosUsuario.all()
+        user =current_user
+    return render(request, 'PerfilUsuario.html',{'user':user, 'anuncios':anuncios})
