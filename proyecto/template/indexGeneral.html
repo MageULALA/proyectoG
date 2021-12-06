@@ -166,73 +166,24 @@
 
 <div class="contenedorBotones">
   <div class="row align-items-center justify-content-center ">
-        <h1 class="masanuncios"><a href="">VER MÁS PUBLICACIONES</a></h1>
-        <h6>Categorías populares</h6>
+        <h1 class="masanuncios"><a href="{% url 'anunciosBuscados' "Todos" %}">VER MÁS PUBLICACIONES</a></h1>
+        <h6>Algunos servicios...</h6>
     </div>
 
-  <div class="row align-items-center justify-content-center ">     
-        <div class="col-auto">
-          <a class="botonservicio" href="">Niñettttttttttra</a>
+    <div class="row-auto">
+      <div class="col-12">
+        <div class="row align-items-center justify-content-center">
+          {% for servicio in servicios %}
+          <div style="background: none;padding:0px; width: auto ;" class="col-3 align-self-center">
+            <a style="font-size:12px; width: 40px;" class="botonservicio" href=" {% url 'anunciosBuscadosServicio' servicio.nombre %} ">{{servicio.nombre}}</a>
+          </div>
+          {% endfor %}
         </div>
-
-        <div class="col-auto">
-          <a class="botonservicio" href="">Niñettttttttttra</a>
-        </div>
-
-        <div class="col-auto">
-          <a class="botonservicio" href="">Niñettiiiiiiiiittttttttra</a>
-        </div>
-        <div class="col-auto">
-          <a class="botonservicio" href="">Niñettttttttttra</a>
-        </div>
-
-
+      </div>
     </div>
-    
-    <div class="clearfix" style="margin-bottom: 20px;"></div> 
-
-    <div class="row align-items-center justify-content-center ">
-      <div class="col-auto">
-        <a class="botonservicio" href="">Niñettttttttttra</a>
-      </div>
-
-      <div class="col-auto">
-        <a class="botonservicio" href="">Niñettttttttttra</a>
-      </div>
-
-      <div class="col-auto">
-        <a class="botonservicio" href="">Niñettttttttttra</a>
-      </div>
-      <div class="col-auto">
-        <a class="botonservicio" href="">Niñettttttttttra</a>
-      </div>
-
-      <div class="col-auto">
-        <a class="botonservicio" href="">Niñettttttttttra</a>
-      </div>
-
-  </div>
 
   <div class="clearfix" style="margin-bottom: 20px;"></div> 
 
-  <div class="row align-items-center justify-content-center ">
-    <div class="col-auto">
-      <a class="botonservicio" href="">Niñettttttttttra</a>
-    </div>
-
-    <div class="col-auto">
-      <a class="botonservicio" href="">Niñettttttttttra</a>
-    </div>
-
-    <div class="col-auto">
-      <a class="botonservicio" href="">Niñettttttttttra</a>
-    </div>
-    <div class="col-auto">
-      <a class="botonservicio" href="">Niñettttttttttra</a>
-    </div>
-
-
-  </div>
 
 </div>
 {% endblock %}

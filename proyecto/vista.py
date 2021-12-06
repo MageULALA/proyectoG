@@ -11,7 +11,7 @@ from django.shortcuts import get_object_or_404, redirect, render
 from django.contrib.auth import authenticate, forms, login
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib import messages
-from administrador.models import Perfil,Servicio, Anuncio, Venta, Departamento, Paquete
+from administrador.models import Perfil,Servicio, Anuncio, Venta, Departamento, Paquete, Favorito
 from proyecto.carrito import Carrito
 from proyecto.context_processor import total_carrito
 from django.urls import reverse
@@ -21,13 +21,11 @@ from django.core.mail import send_mail
 from django.template import RequestContext
 
 def inicio(request):
-    palabras = request.GET.get('buscar')
-    print(f'Hola', palabras)
-
+    servicios = Servicio.objects.filter(vigencia="V")[:15]
     anunciosNuevos = Anuncio.objects.filter(estado="A")
     anunciosMasSolicitados = Anuncio.objects.filter(estado="A")
     anunciosMasSeguidos = Anuncio.objects.filter(estado="A")
-    return render(request, 'indexGeneral.html', {'anunciosNuevos': anunciosNuevos,'anunciosMasSolicitados':anunciosMasSolicitados,'anunciosMasSeguidos':anunciosMasSeguidos})
+    return render(request, 'indexGeneral.html', {'anunciosNuevos': anunciosNuevos,'anunciosMasSolicitados':anunciosMasSolicitados,'anunciosMasSeguidos':anunciosMasSeguidos, 'servicios':servicios})
 
 
 def registro(request):
@@ -153,7 +151,7 @@ def crearVenta(request):
             objVenta.numeroTarjeta=numeroTarjeta
             objVenta.save()
             messages.success(request, f'Compra registrada')
-            redirect('inicio')
+            return redirect('inicio')
         else:
             messages.success(request, f'Acción inválida')
             print(f'Hola')
@@ -170,19 +168,22 @@ def anunciosBuscados(request, *args, **kwargs):
     palabras = kwargs.get("palabras")
     departamentos = Departamento.objects.all()
     servicios = Servicio.objects.filter(vigencia='V')
-    if palabras:
+    if palabras == 'Todos':
+        anuncios = Anuncio.objects.filter(estado="A")
+        return render (request,'busqueda.html',{'departamentos': departamentos, 'servicios':servicios, 'anuncios': anuncios})
+    else:
         anuncios = Anuncio.objects.filter(estado="A").filter(Q(servicio__nombre__icontains = palabras) | Q(titulo__icontains = palabras) | Q(descripcion__icontains = palabras) ).distinct()
         return render (request,'busqueda.html',{'departamentos': departamentos, 'servicios':servicios, 'anuncios': anuncios})
-    return render (request,'busqueda.html',{'departamentos': departamentos, 'servicios':servicios})
+
 
 def anunciosBuscadosServicio(request, nombreservicio):
-    objAnuncios = Anuncio.objects.filter(servicio__nombre = nombreservicio)
+    objAnuncios = Anuncio.objects.filter(servicio__nombre = nombreservicio, estado="A")
     departamentos = Departamento.objects.all()
     servicios = Servicio.objects.filter(vigencia='V')
     return render (request,'busqueda.html',{'departamentos': departamentos, 'servicios':servicios, 'anuncios': objAnuncios})
 
 def anunciosBuscadosUbicacion(request, nombredepartamento):
-    objAnuncios = Anuncio.objects.filter(departamento__nombre = nombredepartamento)
+    objAnuncios = Anuncio.objects.filter(departamento__nombre = nombredepartamento, estado="A")
     departamentos = Departamento.objects.all()
     servicios = Servicio.objects.filter(vigencia='V')
     return render (request,'busqueda.html',{'departamentos': departamentos, 'servicios':servicios, 'anuncios': objAnuncios})
@@ -204,3 +205,22 @@ def susAnuncios(request, username=None):
         usuario = current_user
         anuncios = Anuncio.objects.filter(user=usuario)
     return render(request, 'susAnuncios.html',{'usuario':usuario,'anuncios':anuncios})
+
+
+def nuevofavorito(request, anuncioiden):
+    current_user = request.user
+    anuncioobj =Anuncio.objects.filter(id = anuncioiden).first()
+    fav = Favorito(user=current_user, anuncio=anuncioobj)
+    fav.save()
+    messages.success(request, f'Agregado a favoritos')
+    return redirect('inicio')
+
+def borrarfavorito(request, anuncioiden):
+    current_user = request.user
+    anuncioobj =Anuncio.objects.filter(id = anuncioiden).first()
+    fav = Favorito.objects.filter(user=current_user.id, anuncio=anuncioobj).get()
+    fav.delete()
+    messages.success(request, f'Eliminado de favoritos')
+    return redirect('inicio')
+
+    

@@ -44,6 +44,8 @@ urlpatterns = [
     path('anunciosBuscadosServicio/<str:nombreservicio>/', vista.anunciosBuscadosServicio, name='anunciosBuscadosServicio'),
     path('anunciosBuscadosUbicacion/<str:nombredepartamento>/', vista.anunciosBuscadosUbicacion, name='anunciosBuscadosUbicacion'),
     path('susAnuncios/<str:username>/', vista.susAnuncios, name='susAnuncios'),
+    path('nuevofavorito/<int:anuncioiden>/', vista.nuevofavorito, name='nuevofavorito'),
+    path('borrarfavorito/<int:anuncioiden>/', vista.borrarfavorito, name='borrarfavorito'),
 ]
 
 if settings.DEBUG:

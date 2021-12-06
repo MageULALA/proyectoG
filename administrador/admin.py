@@ -1,5 +1,5 @@
 from django.contrib import admin
-from administrador.models import Servicio,Departamento, Perfil, Anuncio, Paquete, Venta, Licencia
+from administrador.models import Servicio,Favorito,Departamento, Perfil, Anuncio, Paquete, Venta, Licencia
 # Register your models here.
 
 class ServicioAdmin(admin.ModelAdmin):
@@ -40,6 +40,10 @@ class DepartamentoAdmin(admin.ModelAdmin):
     list_display=("id","nombre")
     search_fields=("id","nombre")
 
+class FavoritoAdmin(admin.ModelAdmin):
+    list_display=("id","user")
+    search_fields=("id","user")
+
 admin.site.register(Servicio, ServicioAdmin)
 admin.site.register(Departamento, DepartamentoAdmin)
 admin.site.register(Perfil)
@@ -49,4 +53,5 @@ admin.site.register(Anuncio, AnuncioAdmin)
 admin.site.register(Paquete, PaqueteAdmin)
 admin.site.register(Venta, VentaAdmin)
 admin.site.register(Licencia, LicenciaAdmin)
+admin.site.register(Favorito, FavoritoAdmin)
 

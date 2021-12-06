@@ -12,12 +12,19 @@ class Perfil(models.Model):
 
     def __str__(self):
         return f'Perfil de {self.user.username}'
+    
+    def detFavorito(self):
+        anuncio_ids = Favorito.objects.filter(user=self.user)
+        return anuncio_ids
 
 class Departamento(models.Model):
     nombre = models.CharField(max_length=50)
 
     def __str__(self):
         return self.nombre
+
+    class Meta:
+        ordering = ['nombre']
 
 class Paquete(models.Model):
     descripcion = models.CharField(max_length=80)
@@ -27,12 +34,18 @@ class Paquete(models.Model):
     vigencia = models.CharField(max_length=1,default="V", blank=True)
     def __str__(self):
         return self.descripcion
+    class Meta:
+        ordering = ['cantidadAnuncios']
+
 
 class Venta(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE, related_name='ventasUsuario', null=True, blank=True)
     fecha= models.DateTimeField(default=timezone.now, null=True, blank=True)
     total = models.IntegerField(null=True, blank=True)
     numeroTarjeta=models.CharField(max_length=16, null=True, blank=True)
+    
+    class Meta:
+        ordering = ['-fecha']
 
 class Licencia(models.Model):
     paquete = models.ForeignKey('Paquete',on_delete=models.DO_NOTHING, related_name='licenciasPaquete')
@@ -74,6 +87,11 @@ class Anuncio(models.Model):
         return f'{self.user.username}: {self.descripcion}'
 
 
+class Favorito(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE, related_name='favoritosUsuario')
+    anuncio = models.ForeignKey(Anuncio, on_delete=models.CASCADE, related_name='favoritosAnuncios')
+    def __str__(self):
+        return f'{self.user} a {self.anuncio}'
 
 
 
