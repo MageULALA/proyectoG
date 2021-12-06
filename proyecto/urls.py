@@ -39,11 +39,11 @@ urlpatterns = [
     path('eliminar/<int:paquete_id>/', vista.eliminar_paquete, name='Del'),
     path('restar/<int:paquete_id>/', vista.restar_paquete, name='Sub'),
     path('limpiar/', vista.limpiar_carrito, name='CLS'),
-    path('anunciosPerfil/', vista.anunciosPerfil, name='anunciosPerfil'),
     path('crearVenta/', vista.crearVenta, name='crearVenta'),
     path('verAnuncio/<int:anuncio_id>/', vista.verAnuncio, name='verAnuncio'),
     path('anunciosBuscadosServicio/<str:nombreservicio>/', vista.anunciosBuscadosServicio, name='anunciosBuscadosServicio'),
     path('anunciosBuscadosUbicacion/<str:nombredepartamento>/', vista.anunciosBuscadosUbicacion, name='anunciosBuscadosUbicacion'),
+    path('susAnuncios/<str:username>/', vista.susAnuncios, name='susAnuncios'),
 ]
 
 if settings.DEBUG:

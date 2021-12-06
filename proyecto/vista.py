@@ -140,10 +140,6 @@ def limpiar_carrito(request):
     carrito.limpiar()
     return redirect('tienda')
 
-def anunciosPerfil(request):
-    anunciosUsuario = Anuncio.objects.all()
-    return render(request, "misanuncios.html", {'anunciosUsuario': anunciosUsuario})
-
 
 def crearVenta(request):
     try:
@@ -175,7 +171,7 @@ def anunciosBuscados(request, *args, **kwargs):
     departamentos = Departamento.objects.all()
     servicios = Servicio.objects.filter(vigencia='V')
     if palabras:
-        anuncios = Anuncio.objects.filter( Q(servicio__nombre__icontains = palabras) | Q(titulo__icontains = palabras) | Q(descripcion__icontains = palabras) ).distinct()
+        anuncios = Anuncio.objects.filter(estado="A").filter(Q(servicio__nombre__icontains = palabras) | Q(titulo__icontains = palabras) | Q(descripcion__icontains = palabras) ).distinct()
         return render (request,'busqueda.html',{'departamentos': departamentos, 'servicios':servicios, 'anuncios': anuncios})
     return render (request,'busqueda.html',{'departamentos': departamentos, 'servicios':servicios})
 
@@ -194,9 +190,17 @@ def anunciosBuscadosUbicacion(request, nombredepartamento):
 def verperfil(request, username=None):
     current_user = request.user
     if username and username != current_user.username:
-        user = User.objects.get(username=username)
-        anuncios = user.anunciosUsuario.all()
+        usuario = User.objects.get(username=username)
     else:
-        anuncios = current_user.anunciosUsuario.all()
-        user =current_user
-    return render(request, 'PerfilUsuario.html',{'user':user, 'anuncios':anuncios})
+        usuario =current_user
+    return render(request, 'PerfilUsuario.html',{'usuario':usuario})
+
+def susAnuncios(request, username=None):
+    current_user = request.user
+    if username and username != current_user.username:
+        usuario = User.objects.get(username=username)
+        anuncios = Anuncio.objects.filter(user__username=username)
+    else:
+        usuario = current_user
+        anuncios = Anuncio.objects.filter(user=usuario)
+    return render(request, 'susAnuncios.html',{'usuario':usuario,'anuncios':anuncios})

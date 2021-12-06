@@ -3,7 +3,8 @@
 {% load static %}
 
 {% block estilos %}
-
+{{ block.super }}
+<link rel="stylesheet" href="{% static 'css/estilobusqueda.css' %}">
 {% endblock %}
 
 {% block titulo %} Anuncios publicados | BOOM {% endblock %}
@@ -14,9 +15,42 @@
 
 
 
-{% block cuerpo %} 
+{% block cuerpo %}
 
+{% if usuario %}
 {{ block.super }}
+{% endif %}
+
+<div class="row" style="padding: 0px 0;">
+    <div class="col-12">
+        <div class="row">
+    {% if anuncios %}
+        {% for anuncio in anuncios %}
+            <div class="col-3" style="padding-top: 0px;" id="anuncio">
+              <a href=" {% url 'verAnuncio' anuncio.id %} ">
+                <div class="card" style="align-items: center;">
+                  <img  class="card-img-top" style="width: 200px; height: 250px; margin: 0px;" src=" {{anuncio.rutaimagen.url}} ">
+                  <div class="card-body">
+                    <div style="font-size: 12px; color: black; text-align:center ;width: 150px;">
+                      {{anuncio.titulo}}
+                    </div>
+                    <div><p class="card-text" style="text-align:center;"><small class="text-muted">{{anuncio.departamento}}</small></p></div>
+                    <div><p class="card-text" style="text-align:center;"><small class="text-muted">{{anuncio.timestamp}}</small></p></div>
+            
+                  </div>
+                </div>
+              </a>
+            </div>
+
+        {% endfor %}
+
+    {% else %}
+            <div class="align-items-center" style="margin-left:100px;" ><h4>Aún no hay anuncios publicados</h4></div>
+    {% endif %}
+        </div>
+    </div>
+</div>
+
 {% endblock %}
 
 
